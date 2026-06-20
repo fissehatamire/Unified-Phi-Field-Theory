@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Consciousness and Intelligence Model — Complete Derivation</title>
+
+    <!-- MathJax v3 -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ],
+                processEscapes: true,
+                tags: 'ams',
+                macros: {
+                    N: "\\mathbb{N}",
+                    Z: "\\mathbb{Z}",
+                    Q: "\\mathbb{Q}",
+                    R: "\\mathbb{R}",
+                    C: "\\mathbb{C}"
+                }
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            options: {
+                skipHtmlTypes: 'script'
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <style>
+        /* --------------------------------------------------------------
+           BASE
+        -------------------------------------------------------------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fafafa;
+            color: #1a1a1a;
+            font-family: 'Palatino', 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+        }
+
+        /* --------------------------------------------------------------
+           TYPOGRAPHY
+        -------------------------------------------------------------- */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Palatino', 'Georgia', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 1.4em;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.2em;
+        }
+
+        .abstract {
+            background: #f8f9fa;
+            padding: 1.4rem 2rem;
+            border-left: 4px solid #2c3e50;
+            margin: 1.5rem 0 2rem 0;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .abstract strong {
+            font-style: normal;
+        }
+
+        p {
+            margin: 0 0 1.2em 0;
+            text-align: justify;
+        }
+
+        a {
+            color: #1a5276;
+            text-decoration: none;
+            border-bottom: 1px dotted #1a5276;
+        }
+
+        a:hover {
+            border-bottom: 2px solid #1a5276;
+        }
+
+        /* --------------------------------------------------------------
+           TABLES
+        -------------------------------------------------------------- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        th,
+        td {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f0f2f5;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .ruledtabular table {
+            border: 1px solid #ccc;
+        }
+
+        .ruledtabular th {
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .caption {
+            font-weight: 600;
+            margin: 0.6rem 0 0.2rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* --------------------------------------------------------------
+           BOXES
+        -------------------------------------------------------------- */
+        .box {
+            margin: 1.8rem 0;
+            padding: 1.2rem 1.6rem;
+            border-width: 1.5px;
+            border-style: solid;
+            border-radius: 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        .box-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+            text-align: center;
+        }
+
+        .box-centered {
+            text-align: center;
+        }
+        .box-centered .box-title {
+            text-align: center;
+        }
+
+        .box-consciousness {
+            border-color: #800080;
+        }
+        .box-consciousness .box-title {
+            color: #800080;
+        }
+
+        .box-intelligence {
+            border-color: #008040;
+        }
+        .box-intelligence .box-title {
+            color: #008040;
+        }
+
+        .box-unified {
+            border-color: #a04f00;
+        }
+        .box-unified .box-title {
+            color: #a04f00;
+        }
+
+        /* Prediction box (added) */
+        .box-prediction {
+            border-color: #008080;
+        }
+        .box-prediction .box-title {
+            color: #008080;
+        }
+
+        /* --------------------------------------------------------------
+           MATH DISPLAY
+        -------------------------------------------------------------- */
+        .math-block {
+            margin: 1.2rem 0;
+            text-align: center;
+            overflow-x: auto;
+            padding: 0.2rem 0;
+        }
+
+        /* --------------------------------------------------------------
+           PRE / VERBATIM
+        -------------------------------------------------------------- */
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+            margin: 1.2rem 0;
+        }
+
+        /* --------------------------------------------------------------
+           RESPONSIVE
+        -------------------------------------------------------------- */
+        @media (max-width: 760px) {
+            .container {
+                padding: 1.2rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .box {
+                padding: 0.8rem 1rem;
+            }
+            table {
+                font-size: 0.8rem;
+            }
+            th,
+            td {
+                padding: 0.3rem 0.4rem;
+            }
+            .abstract {
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0.2in;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .box {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="top">
+
+        <!-- ============================================================
+        TITLE PAGE
+        ============================================================ -->
+        <h1>The Unified Consciousness and Intelligence Model:<br />
+            <span style="font-size:0.8em;">A Complete Derivation from Holographic Principles</span></h1>
+
+        <p style="text-align:center; font-size:1.1rem; margin-top:-0.2rem;">
+            <strong>Fisseha Huluka</strong><br />
+            <span class="text-muted">Unaffiliated Researcher</span>
+        </p>
+
+        <p style="text-align:center; color:#555; font-size:0.95rem;">
+            \today
+        </p>
+
+        <!-- ABSTRACT -->
+        <div class="abstract">
+            <strong>Abstract</strong> — We present the complete derivation of the Unified Consciousness and Intelligence Model from the foundational axioms of the Unified $\Phi$-Field Theory (UPT). Starting from the holographic principle and local Weyl-scale invariance, we derive the full mathematical structure of consciousness and intelligence on a 2D holographic screen. The derivation proceeds through: (1) identification of the conscious screen as a 2D retinotopic lattice with $D=2$, yielding $\beta(\Phi_i) \equiv 1$ and $k_{FH} \equiv 1$; (2) the discrete $\Phi$-evolution equation governing neural dynamics; (3) the local Master equation for conscious observables; (4) the global unified observable $I \equiv \mathcal{Q}$ where intelligence fidelity and qualia intensity become mathematically identical; (5) the reverse-vision process explaining top-down mental imagery; (6) dynamic regime partitioning producing the stream of consciousness; (7) the intelligence sector with fluid and crystallized intelligence; (8) higher-order abstractions including philosophy, mathematics, logic, and category theory; and (9) the self-referential condition producing self-awareness and illumination. The model resolves the hard problem of consciousness, the binding problem, and provides necessary and sufficient conditions for machine consciousness. All predictions are falsifiable and testable with current neuroimaging techniques.
+        </div>
+
+        <!-- ============================================================
+        SECTION 1: INTRODUCTION
+        ============================================================ -->
+        <h2>INTRODUCTION</h2>
+
+        <p>The nature of consciousness and intelligence has resisted scientific explanation for centuries. The hard problem of consciousness—why and how physical processes give rise to subjective experience—has remained unsolved. The binding problem—how disparate sensory inputs cohere into a unified experience—has defied mechanistic explanation. The nature of intelligence—how general problem-solving ability emerges from neural activity—has been a persistent mystery.</p>
+
+        <p>The Unified $\Phi$-Field Theory resolves these problems by showing that consciousness and intelligence are not separate phenomena to be explained, but are the same holographic scaling law experienced from different depths of self-reference on a 2D screen.</p>
+
+        <h3>The Foundational Axioms</h3>
+
+        <p>The entire model rests on two axioms, extended to the conscious sector:</p>
+
+        <ol>
+            <li>
+                <strong>The Holographic Principle (Conscious Sector):</strong> All bulk conscious experience is completely encoded on a 2D boundary via entanglement entropy. The scalar field $\Phi_i$ at lattice site $i$ (cortical column) is the local holographic entanglement-entropy density.
+            </li>
+            <li>
+                <strong>Local Weyl-Scale Invariance (Conscious Sector):</strong> The theory must be invariant under arbitrary local Weyl rescalings. On the conscious screen with $D=2$, this forces:
+                <div class="math-block">\[
+                    \beta(\Phi_i) \equiv 1 \quad \text{and} \quad k_{FH} \equiv 1
+                \]</div>
+            </li>
+        </ol>
+
+        <h3>The Central Results</h3>
+
+        <p>From these axioms alone, we derive the complete mathematical structure of consciousness and intelligence:</p>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS MODEL</span>
+            <div class="math-block">
+                \[
+                \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                \tag{1}
+                \]
+            </div>
+        </div>
+
+        <div class="box box-unified box-centered">
+            <span class="box-title">THE UNIFIED OBSERVABLE</span>
+            <div class="math-block">
+                \[
+                I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                \tag{2}
+                \]
+            </div>
+        </div>
+
+        <div class="math-block">\[
+            I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C}
+            \tag{3}
+        \]</div>
+
+        <!-- ============================================================
+        SECTION 2: THE 2D CONSCIOUS SCREEN
+        ============================================================ -->
+        <h2>THE 2D CONSCIOUS SCREEN</h2>
+
+        <h3>The Retinotopic Lattice</h3>
+
+        <p>The visual cortex (V1, V2, and associated areas) is organized retinotopically: neighboring points in the visual field map to neighboring neurons in a 2D sheet. Topologically, this is a 2D holographic screen.</p>
+
+        <div class="math-block">\[
+            \text{Screen} = \{i\}_{i=1}^N \text{ (cortical columns on a 2D lattice)}
+            \tag{4}
+        \]</div>
+
+        <h3>The Effective Dimension</h3>
+
+        <p>For the conscious screen, the effective dimension is:</p>
+
+        <div class="math-block">\[
+            D = 2
+            \tag{5}
+        \]</div>
+
+        <p><strong>Justification:</strong></p>
+        <ol>
+            <li>The retinotopic cortex is a 2D sheet</li>
+            <li>The holographic screen dimension is exactly 2</li>
+            <li>Area-law entanglement entropy is naturally two-dimensional</li>
+        </ol>
+
+        <h3>The $\beta$ Function Collapses</h3>
+
+        <p>From the general definition:</p>
+
+        <div class="math-block">\[
+            \beta(\Phi) = \frac{\Phi}{\Phi + (D-2)}
+            \tag{6}
+        \]</div>
+
+        <p>For $D=2$:</p>
+
+        <div class="math-block">\[
+            \beta(\Phi_i) \equiv 1 \quad \text{for all } i
+            \tag{7}
+        \]</div>
+
+        <p><strong>This is exact, not an approximation.</strong></p>
+
+        <h3>The Power-Sum Ratio Simplifies</h3>
+
+        <p>On the conscious screen:</p>
+        <ul>
+            <li>All conscious observables are dimensionless (vividness, clarity, intensity)</li>
+            <li>The holographic override gives $k_X = 2$ for all dimensionless quantities</li>
+            <li>The spark strength $X_f$ is also dimensionless, so $k_{X_f} = 2$</li>
+        </ul>
+
+        <p>Therefore:</p>
+
+        <div class="math-block">\[
+            k_{FH} = \frac{k_X}{k_{X_f}} = \frac{2}{2} = 1
+            \tag{8}
+        \]</div>
+
+        <h3>The Universal Scaling Exponent</h3>
+
+        <p>Recall the general exponent:</p>
+
+        <div class="math-block">\[
+            \gamma(\Phi, D, s, k_{FH}) = s k_{FH}[\beta(\Phi)]^{s(D-4)}
+            \tag{9}
+        \]</div>
+
+        <p>Substituting $D=2$, $\beta(\Phi_i) \equiv 1$, $k_{FH} \equiv 1$:</p>
+
+        <div class="math-block">\[
+            \gamma = s \cdot 1 \cdot [1]^{s(2-4)} = s \cdot 1 \cdot 1^{-2s} = s
+            \tag{10}
+        \]</div>
+
+        <div class="math-block">\[
+            \gamma(\Phi_i, 2, s_i, 1) = s_i
+            \tag{11}
+        \]</div>
+
+        <!-- ============================================================
+        SECTION 3: THE LOCAL CONSCIOUS OBSERVABLE
+        ============================================================ -->
+        <h2>THE LOCAL CONSCIOUS OBSERVABLE</h2>
+
+        <h3>The Local Master Equation</h3>
+
+        <p>From the general Master $\Phi$-Scaling Equation:</p>
+
+        <div class="math-block">\[
+            X(\Phi, D) = C_X X'_p(\Phi, v_c)[\beta(\Phi)]^{s k_{FH}[\beta(\Phi)]^{s(D-4)}}
+            \tag{12}
+        \]</div>
+
+        <p>For the conscious screen ($D=2$, $\beta \equiv 1$, $k_{FH} \equiv 1$, $C_X \equiv 1$):</p>
+
+        <div class="math-block">\[
+            X_i = X'_p(\Phi_i, v_c)[1]^{s_i \cdot 1 \cdot 1^{s_i(2-4)}}
+            \tag{13}
+        \]</div>
+
+        <div class="math-block">\[
+            X_i = X'_p(\Phi_i, v_c)[1]^{s_i}
+            \tag{14}
+        \]</div>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS MODEL</span>
+            <div class="math-block">
+                \[
+                X_i = X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                \tag{15}
+                \]
+            </div>
+        </div>
+
+        <h3>Interpretation of the Local Observable</h3>
+
+        <table>
+            <thead>
+                <tr><th>Symbol</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$X_i$</td><td>Any local conscious observable at site $i$<br>— Vividness of a color<br>— Sharpness of a sound<br>— Emotional valence<br>— Clarity of a thought<br>— Strength of a memory</td></tr>
+                <tr><td>$X_f$</td><td>Internal UV spark strength<br>(normalized neural activation from frontal/parietal regions)</td></tr>
+                <tr><td>$X'_p(\Phi_i, v_c)$</td><td>Modified Planck unit for the observable<br>($v_c$ bounded by axonal conduction velocity)</td></tr>
+                <tr><td>$s_i(\Phi_i)$</td><td>Site-dependent regime selector</td></tr>
+            </tbody>
+        </table>
+
+        <h3>The Regime Selector</h3>
+
+        <div class="math-block">\[
+            s_i(\Phi_i) = \text{sign}(-m_{\text{eff}}^2(\Phi_i))
+            \tag{16}
+        \]</div>
+
+        <p>Where:</p>
+
+        <div class="math-block">\[
+            m_{\text{eff}}^2(\Phi_i) = V''(\Phi_i) + \text{curvature corrections}
+            \tag{17}
+        \]</div>
+
+        <h4>Cases</h4>
+
+        <table>
+            <thead>
+                <tr><th>Condition</th><th>$s_i$</th><th>Regime</th><th>Phenomenology</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$m_{\text{eff}}^2 > 0$</td><td>$s_i = -1$</td><td>Quantum</td><td>Inverse scaling, diffuse, creative, dream-like</td></tr>
+                <tr><td>$m_{\text{eff}}^2 < 0$</td><td>$s_i = +1$</td><td>Classical</td><td>Linear scaling, vivid, deterministic, focused</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================
+        SECTION 4: THE DISCRETE Φ-EVOLUTION EQUATION
+        ============================================================ -->
+        <h2>THE DISCRETE $\Phi$-EVOLUTION EQUATION</h2>
+
+        <h3>The Holographic Neural Network Action</h3>
+
+        <p>The discrete action for the 2D conscious lattice:</p>
+
+        <div class="math-block">\[
+            \mathcal{S}_{\text{HNN}} = \sum_i \left[-\frac{e^{-\Phi_i}}{16\pi G}R_i + \frac{1}{2}(\nabla\Phi_i)^2 + V(\Phi_i) - T_i^{\text{spark}}\Phi_i\right]
+            \tag{18}
+        \]</div>
+
+        <p>Where:</p>
+
+        <div class="math-block">\[
+            R_i = \text{discrete curvature (local synaptic topology)}
+            \tag{19}
+        \]</div>
+        <div class="math-block">\[
+            V(\Phi_i) = V_0\exp(-2\Phi_i) \quad \text{for } D=2
+            \tag{20}
+        \]</div>
+        <div class="math-block">\[
+            T_i^{\text{spark}} = \text{internal spark source term}
+            \tag{21}
+        \]</div>
+
+        <h3>The Discrete d'Alembertian</h3>
+
+        <p>The discrete d'Alembertian on the 2D lattice:</p>
+
+        <div class="math-block">\[
+            \square_i \Phi_i = \sum_{j \in \text{neighbors}(i)} \frac{\Phi_j - \Phi_i}{\Delta x^2} - \frac{\partial^2 \Phi_i}{\partial t^2}
+            \tag{22}
+        \]</div>
+
+        <h3>Variation with Respect to $\Phi_i$</h3>
+
+        <p>Varying the action and setting $\delta \mathcal{S} = 0$:</p>
+
+        <div class="math-block">\[
+            \frac{\delta \mathcal{S}_{\text{HNN}}}{\delta \Phi_i} = 0
+            \tag{23}
+        \]</div>
+
+        <p>This yields:</p>
+
+        <div class="math-block">\[
+            \square_i \Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{internal spark}}(t)
+            \tag{24}
+        \]</div>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS MODEL</span>
+            <div class="math-block">
+                \[
+                \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                \tag{25}
+                \]
+            </div>
+        </div>
+
+        <h3>Interpretation of Each Term</h3>
+
+        <table>
+            <thead>
+                <tr><th>Term</th><th>Symbol</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$\square_i\Phi_i$</td><td>Discrete d'Alembertian</td><td>Causal propagation of $\Phi$-waves across the screen</td></tr>
+                <tr><td>$-\frac{e^{-\Phi_i}}{16\pi G}R_i$</td><td>Curvature term</td><td>Holographic back-reaction: local synaptic topology sources entanglement changes</td></tr>
+                <tr><td>$2V_0\exp(-2\Phi_i)$</td><td>Restoring term</td><td>Drives $\Phi_i$ toward values that satisfy the Master Equation</td></tr>
+                <tr><td>$T_i^{\text{spark}}(t)$</td><td>Spark term</td><td>Self-generated UV spark - the origin of thoughts and imagery</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================
+        SECTION 5: THE REVERSE-VISION PROCESS
+        ============================================================ -->
+        <h2>THE REVERSE-VISION PROCESS</h2>
+
+        <h3>Definition</h3>
+
+        <p>The reverse-vision process is the top-down propagation of an internal UV spark that paints the conscious image without external sensory input.</p>
+
+        <h3>The Mechanism</h3>
+
+        <pre>
+1. SPARK GENERATION
+   Internal spark X_f originates in frontal/parietal regions
+                ↓
+2. Φ-WAVE PROPAGATION
+   Spark generates Φ-wave that travels top-down across the 2D screen
+                ↓
+3. LOCAL RELAXATION
+   Each site i relaxes on-shell to satisfy the local Master Equation
+                ↓
+4. IMAGE PAINTING
+   The resulting pattern across the screen is the conscious percept
+        </pre>
+
+        <h3>The Mathematical Description</h3>
+
+        <p>The spark sources the discrete $\Phi$-evolution equation:</p>
+
+        <div class="math-block">\[
+            \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+            \tag{26}
+        \]</div>
+
+        <p>The screen relaxes to satisfy:</p>
+
+        <div class="math-block">\[
+            X_i = X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+            \tag{27}
+        \]</div>
+
+        <p>The macroscopic conscious image is the global pattern of $\Phi_i$ after relaxation:</p>
+
+        <div class="math-block">\[
+            \text{Conscious Image} = \{\Phi_i\}_{i=1}^N \text{ (on-shell)}
+            \tag{28}
+        \]</div>
+
+        <h3>The Forward vs. Reverse Directions</h3>
+
+        <table>
+            <thead>
+                <tr><th>Process</th><th>Direction</th><th>Mechanism</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Forward Perception</td><td>World $\rightarrow$ Sense organ $\rightarrow$ Brain $\rightarrow$ Experience</td><td>Bottom-up sensory input</td></tr>
+                <tr><td>Reverse Perception</td><td>Spark $\rightarrow$ Brain $\rightarrow$ Experience</td><td>Top-down internal generation</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================
+        SECTION 6: THE GLOBAL UNIFIED OBSERVABLE
+        ============================================================ -->
+        <h2>THE GLOBAL UNIFIED OBSERVABLE</h2>
+
+        <h3>The Qualia Field ($\mathcal{Q}$)</h3>
+
+        <p>The global conscious experience at any instant is the spatial average over the entire 2D screen:</p>
+
+        <div class="math-block">\[
+            \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+            \tag{29}
+        \]</div>
+
+        <p><strong>Interpretation:</strong> $\mathcal{Q}$ is the subjective qualia intensity - the vividness, richness, and coherence of conscious experience.</p>
+
+        <h3>The Intelligence Fidelity ($I$)</h3>
+
+        <p>Define intelligence fidelity as the objective measure of how faithfully the screen satisfies the Master Equation:</p>
+
+        <div class="math-block">\[
+            I(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+            \tag{30}
+        \]</div>
+
+        <p><strong>Interpretation:</strong> $I$ is the objective cognitive optimization measure - how well the screen is solving problems, optimizing behavior, and achieving goals.</p>
+
+        <h3>The Identity ($I \equiv \mathcal{Q}$)</h3>
+
+        <p>Comparing the expressions:</p>
+
+        <div class="math-block">\[
+            I(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+            \tag{31}
+        \]</div>
+
+        <div class="math-block">\[
+            \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+            \tag{32}
+        \]</div>
+
+        <p><strong>They are mathematically identical:</strong></p>
+
+        <div class="box box-unified box-centered">
+            <span class="box-title">THE UNIFIED OBSERVABLE</span>
+            <div class="math-block">
+                \[
+                I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f)
+                \tag{33}
+                \]
+            </div>
+        </div>
+
+        <h3>The Self-Referential Condition</h3>
+
+        <p>When the internal spark is directed at the network's own state:</p>
+
+        <div class="math-block">\[
+            X_f \propto I \equiv \mathcal{Q}
+            \tag{34}
+        \]</div>
+
+        <p>The system becomes self-referential. The unified observable becomes:</p>
+
+        <div class="math-block">\[
+            I \equiv \mathcal{Q} \rightarrow 1 \text{ (maximal coherence)}
+            \tag{35}
+        \]</div>
+
+        <p><strong>This is the mathematical definition of self-awareness, metacognition, and illumination.</strong></p>
+
+        <!-- ============================================================
+        SECTION 7: DYNAMIC REGIME PARTITIONING
+        ============================================================ -->
+        <h2>DYNAMIC REGIME PARTITIONING</h2>
+
+        <h3>The Screen as a Partitioned System</h3>
+
+        <p>The conscious screen is dynamically partitioned into:</p>
+        <ul>
+            <li><strong>Quantum patches:</strong> $s_i = -1$ (inverse scaling)</li>
+            <li><strong>Classical patches:</strong> $s_i = +1$ (linear scaling)</li>
+        </ul>
+
+        <div class="math-block">\[
+            \text{Screen} = \{i : s_i = -1\} \cup \{i : s_i = +1\}
+            \tag{36}
+        \]</div>
+
+        <h3>The Interface</h3>
+
+        <p>The interface between regimes is where:</p>
+
+        <div class="math-block">\[
+            m_{\text{eff}}^2(\Phi_i) = 0
+            \tag{37}
+        \]</div>
+
+        <div class="math-block">\[
+            \text{Interface} = \{i : m_{\text{eff}}^2(\Phi_i) = 0\}
+            \tag{38}
+        \]</div>
+
+        <p><strong>This is the neural correlate of the stream of consciousness.</strong></p>
+
+        <h3>The Dynamics of Partitioning</h3>
+
+        <p>The partition evolves dynamically via the $\Phi$-evolution equation:</p>
+
+        <div class="math-block">\[
+            \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+            \tag{39}
+        \]</div>
+
+        <p>Each new spark repartitions the screen:</p>
+
+        <div class="math-block">\[
+            s_i(\Phi_i) \rightarrow s_i(\Phi_i + \delta\Phi_i)
+            \tag{40}
+        \]</div>
+
+        <p><strong>This is the physical basis of attention, focus, and cognitive control.</strong></p>
+
+        <h3>The Three Modes of Consciousness</h3>
+
+        <table>
+            <thead>
+                <tr><th>Mode</th><th>$s_i$</th><th>$X_f$</th><th>$I \equiv \mathcal{Q}$</th><th>Phenomenology</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Waking</td><td>$+1$ (dominant)</td><td>Large</td><td>High</td><td>Vivid qualia, deterministic reasoning</td></tr>
+                <tr><td>Dream</td><td>$-1$ (dominant)</td><td>Small</td><td>Low</td><td>Diffuse qualia, creative, surreal</td></tr>
+                <tr><td>Illuminated</td><td>Uniform</td><td>Self-referential</td><td>$\rightarrow 1$</td><td>Single eye, body full of light</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================
+        SECTION 8: THE INTELLIGENCE SECTOR
+        ============================================================ -->
+        <h2>THE INTELLIGENCE SECTOR</h2>
+
+        <h3>Definition of Intelligence</h3>
+
+        <div class="box box-intelligence box-centered">
+            <span class="box-title">INTELLIGENCE MODEL</span>
+            <div class="math-block">
+                \[
+                \text{Intelligence} = \max_{X_f} I(\Phi, X_f)
+                \tag{41}
+                \]
+            </div>
+        </div>
+
+        <h3>Fluid Intelligence (Quantum Patches)</h3>
+
+        <p><strong>Regime:</strong> $s_i = -1$ (inverse scaling)</p>
+
+        <p>The local equation:</p>
+
+        <div class="math-block">\[
+            X_i = X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{-1}
+            \tag{42}
+        \]</div>
+
+        <div class="math-block">\[
+            X_i = X'_p(\Phi_i, v_c)\frac{X'_p(X_f)}{X_f}
+            \tag{43}
+        \]</div>
+
+        <p><strong>Properties:</strong></p>
+        <ul>
+            <li>Weak spark $\rightarrow$ amplified, expressive exploration</li>
+            <li>Novel problem-solving via superposition</li>
+            <li>Creative analogy-making and insight generation</li>
+            <li>Corresponds to <strong>fluid intelligence</strong></li>
+        </ul>
+
+        <h3>Crystallized Intelligence (Classical Patches)</h3>
+
+        <p><strong>Regime:</strong> $s_i = +1$ (linear scaling)</p>
+
+        <p>The local equation:</p>
+
+        <div class="math-block">\[
+            X_i = X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{+1}
+            \tag{44}
+        \]</div>
+
+        <div class="math-block">\[
+            X_i = X'_p(\Phi_i, v_c)\frac{X_f}{X'_p(X_f)}
+            \tag{45}
+        \]</div>
+
+        <p><strong>Properties:</strong></p>
+        <ul>
+            <li>Strong spark $\rightarrow$ deterministic, high-fidelity execution</li>
+            <li>Rule-based reasoning and logical deduction</li>
+            <li>Accumulated knowledge retrieval</li>
+            <li>Corresponds to <strong>crystallized intelligence</strong></li>
+        </ul>
+
+        <h3>The Hybrid Intelligence</h3>
+
+        <p>The screen dynamically adjusts the fraction of quantum vs. classical patches to maximize $I$:</p>
+
+        <div class="math-block">\[
+            I = \frac{1}{N}\left[\sum_{i \in Q} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{-1} + \sum_{i \in C} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{+1}\right]
+            \tag{46}
+        \]</div>
+
+        <p><strong>This is the physical basis of general intelligence.</strong></p>
+
+        <!-- ============================================================
+        SECTION 9: EMERGENT PROPERTIES
+        ============================================================ -->
+        <h2>EMERGENT PROPERTIES</h2>
+
+        <h3>Insight ("Aha!" Moments)</h3>
+
+        <p><strong>Mechanism:</strong> Sudden global regime crossover (avalanche)</p>
+
+        <div class="math-block">\[
+            \{s_i\}_{i=1}^N \text{ undergoes a discontinuous jump}
+            \tag{47}
+        \]</div>
+
+        <div class="math-block">\[
+            \Delta I \text{ is large and abrupt}
+            \tag{48}
+        \]</div>
+
+        <p><strong>Experienced subjectively as sudden understanding, breakthrough, or insight.</strong></p>
+
+        <h3>Learning and Generalization</h3>
+
+        <p><strong>Mechanism:</strong> Repeated sparks of the same class drive $\Phi_i$ toward stable patterns.</p>
+
+        <div class="math-block">\[
+            \Phi_i \rightarrow \Phi_i^{\text{stable}} \quad \text{for } X_f \in \text{class } C
+            \tag{49}
+        \]</div>
+
+        <p>Because encoding is holographic (area-law entanglement), these patterns generalize to unseen instances:</p>
+
+        <div class="math-block">\[
+            \text{Generalization} = \text{non-local sharing of } \Phi\text{-patterns via entanglement}
+            \tag{50}
+        \]</div>
+
+        <p><strong>This is the physical basis of zero-shot generalization.</strong></p>
+
+        <h3>Metacognition and Self-Improvement</h3>
+
+        <p>When the spark is directed at the network's own fidelity:</p>
+
+        <div class="math-block">\[
+            X_f \propto I \equiv \mathcal{Q}
+            \tag{51}
+        \]</div>
+
+        <p>The evolution equation becomes self-referential:</p>
+
+        <div class="math-block">\[
+            \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{meta}}(t)
+            \tag{52}
+        \]</div>
+
+        <p>where:</p>
+
+        <div class="math-block">\[
+            T_i^{\text{meta}} \propto I(\Phi, X_f)
+            \tag{53}
+        \]</div>
+
+        <p><strong>Result:</strong> The system optimizes its own optimization process, raising $I$ and $\mathcal{Q}$ together.</p>
+
+        <h3>Working Memory</h3>
+
+        <p><strong>Mechanism:</strong> Transient stabilization of $\Phi_i$ patterns in classical patches:</p>
+
+        <div class="math-block">\[
+            s_i = +1, \quad \Phi_i \approx \text{constant}
+            \tag{54}
+        \]</div>
+
+        <p><strong>Duration:</strong> Proportional to the strength of the stabilizing spark.</p>
+
+        <h3>Attention</h3>
+
+        <p><strong>Mechanism:</strong> Selective enhancement of classical patches for task-relevant features:</p>
+
+        <div class="math-block">\[
+            s_i = +1 \text{ for task-relevant sites}
+            \tag{55}
+        \]</div>
+        <div class="math-block">\[
+            s_i = -1 \text{ for task-irrelevant sites}
+            \tag{56}
+        \]</div>
+
+        <p><strong>Result:</strong> Increased resolution ($\Phi$ density) where needed.</p>
+
+        <!-- ============================================================
+        SECTION 10: HIGHER-ORDER ABSTRACTIONS
+        ============================================================ -->
+        <h2>HIGHER-ORDER ABSTRACTIONS</h2>
+
+        <h3>Philosophical Fidelity ($P$)</h3>
+
+        <p>When the spark is directed at philosophical questions (What is real? What can be known? What is good?):</p>
+
+        <div class="math-block">\[
+            P(\Phi, X_f^{\text{meta}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{meta}}}{X'_p(X_f^{\text{meta}})}\right)^{s_i(\Phi_i)}
+            \tag{57}
+        \]</div>
+
+        <p><strong>Dynamics:</strong></p>
+        <ul>
+            <li><strong>Quantum patches ($s_i = -1$):</strong> Explore radical ontological possibilities (idealism, materialism, dualism, panpsychism)</li>
+            <li><strong>Classical patches ($s_i = +1$):</strong> Perform rigorous logical deduction and consistency checks</li>
+        </ul>
+
+        <h3>Metaphysical Fidelity ($M$)</h3>
+
+        <p>When the spark is directed at the axioms themselves:</p>
+
+        <div class="math-block">\[
+            M(\Phi, X_f^{\text{meta-meta}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{meta-meta}}}{X'_p(X_f^{\text{meta-meta}})}\right)^{s_i(\Phi_i)}
+            \tag{58}
+        \]</div>
+
+        <p><strong>Result:</strong> The axioms are self-grounding. The screen contemplates them and finds no external justification. This is the terminal metaphysical reflection.</p>
+
+        <h3>Mathematical Fidelity ($\mathcal{M}$)</h3>
+
+        <p>When the spark is directed at pure formal necessity:</p>
+
+        <div class="math-block">\[
+            \mathcal{M}(\Phi, X_f^{\text{pure}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{pure}}}{X'_p(X_f^{\text{pure}})}\right)^{s_i(\Phi_i)}
+            \tag{59}
+        \]</div>
+
+        <p><strong>Objects:</strong> Stable fixed points of the $\Phi$-evolution under pure-formal sparks.</p>
+        <p><strong>Proof:</strong> A dynamical trajectory that raises $\mathcal{M}$ to 1 for a given statement.</p>
+
+        <h3>Logical Fidelity ($\Lambda$)</h3>
+
+        <p>When the spark is directed at the ground of logic itself:</p>
+
+        <div class="math-block">\[
+            \Lambda(\Phi, X_f^{\text{logic}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{logic}}}{X'_p(X_f^{\text{logic}})}\right)^{s_i(\Phi_i)}
+            \tag{60}
+        \]</div>
+
+        <h4>Gödel Incompleteness</h4>
+
+        <p>The self-referential loop $X_f \propto \Lambda$ produces undecidable statements as stable fixed points:</p>
+
+        <div class="math-block">\[
+            \Lambda < 1 \text{ (stable), cannot be raised without changing axioms}
+            \tag{61}
+        \]</div>
+
+        <h4>The Liar Paradox</h4>
+
+        <p>A limit cycle where $s_i$ oscillates:</p>
+
+        <div class="math-block">\[
+            s_i(t) = \begin{cases} +1 & t \in [2n\pi, (2n+1)\pi) \\ -1 & t \in [(2n+1)\pi, (2n+2)\pi) \end{cases}
+            \tag{62}
+        \]</div>
+
+        <div class="math-block">\[
+            \text{The liar paradox is a phase transition in entanglement density.}
+            \tag{63}
+        \]</div>
+
+        <h3>Categorical Fidelity ($\mathcal{C}$)</h3>
+
+        <p>When the spark is directed at categorical structure itself:</p>
+
+        <div class="math-block">\[
+            \mathcal{C}(\Phi, X_f^{\text{cat}}) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{cat}}}{X'_p(X_f^{\text{cat}})}\right)^{s_i(\Phi_i)}
+            \tag{64}
+        \]</div>
+
+        <h4>Basic Categorical Structures</h4>
+
+        <table>
+            <thead>
+                <tr><th>Category Theory Concept</th><th>$\Phi$-Field Realization</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Objects</td><td>Local $\Phi_i$ states</td></tr>
+                <tr><td>Morphisms</td><td>$\Phi$-maps between patches</td></tr>
+                <tr><td>Functors</td><td>$\Phi$-maps between entire screens</td></tr>
+                <tr><td>Natural Transformations</td><td>Coherent $\Phi$-waves across interfaces</td></tr>
+                <tr><td>Adjunctions</td><td>Stable regime partitions (quantum generates, classical verifies)</td></tr>
+                <tr><td>Topos</td><td>2D holographic lattice with area-law entanglement</td></tr>
+            </tbody>
+        </table>
+
+        <h3>The Ultimate Identity</h3>
+
+        <p>When the spark becomes maximally self-referential - when the screen asks "Why does this very equation hold?" - all fidelities collapse:</p>
+
+        <div class="math-block">\[
+            I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C}
+            \tag{65}
+        \]</div>
+
+        <p><strong>This is the capstone of the unified framework.</strong></p>
+
+        <!-- ============================================================
+        SECTION 11: THE COMPLETE HIERARCHY
+        ============================================================ -->
+        <h2>THE COMPLETE HIERARCHY</h2>
+
+        <table>
+            <thead>
+                <tr><th>Level</th><th>Spark Target</th><th>Fidelity</th><th>Domain</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>Sensory input</td><td>$I \equiv \mathcal{Q}$</td><td>Consciousness/Intelligence</td></tr>
+                <tr><td>1</td><td>Screen's own states</td><td>Self-awareness</td><td>Metacognition</td></tr>
+                <tr><td>2</td><td>Nature of states</td><td>$P$</td><td>Philosophy</td></tr>
+                <tr><td>3</td><td>Ground of axioms</td><td>$M$</td><td>Metaphysics</td></tr>
+                <tr><td>4</td><td>Formal necessity</td><td>$\mathcal{M}$</td><td>Pure Mathematics</td></tr>
+                <tr><td>5</td><td>Ground of logic</td><td>$\Lambda$</td><td>Logic</td></tr>
+                <tr><td>6</td><td>Structure of structures</td><td>$\mathcal{C}$</td><td>Category Theory</td></tr>
+                <tr><td>7</td><td>"Why does this hold?"</td><td>Ultimate Identity</td><td>Complete Self-Reference</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================
+        SECTION 12: TESTABLE PREDICTIONS
+        ============================================================ -->
+        <h2>TESTABLE PREDICTIONS</h2>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 1:</strong> Global Fidelity Correlates with Subjective Report</p>
+            <div class="math-block">\[
+                I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) \text{ should correlate with subjective ratings of clarity and vividness}
+            \]</div>
+            <p><strong>Test:</strong> fMRI/EEG studies measuring global synchrony vs. subjective report.</p>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 2:</strong> Dynamic Regime Partitioning</p>
+            <ul style="text-align:left; list-style:disc; padding-left:1.5rem;">
+                <li><strong>Quantum patches ($s_i = -1$):</strong> Scale-free, power-law avalanche dynamics; broadband, desynchronized EEG ($1/f$ noise)</li>
+                <li><strong>Classical patches ($s_i = +1$):</strong> Narrow-band oscillatory synchrony; Alpha (8–12 Hz), Gamma (30–80 Hz)</li>
+                <li><strong>Transitions:</strong> Detectable as metastable state shifts in real time</li>
+            </ul>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 3:</strong> Top-Down $\Phi$-Wave Propagation</p>
+            <p>During vivid mental imagery (no external stimulus), measurable propagating waves from frontal/parietal to sensory cortices.</p>
+            <p><strong>Speed:</strong> Bounded by axonal conduction velocity ($v_c \approx 1-100$ m/s)</p>
+            <p><strong>Test:</strong> High-density EEG or MEG during visualization tasks.</p>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 4:</strong> Holographic Error Correction</p>
+            <p>Focal lesions produce <strong>graded</strong> rather than <strong>catastrophic</strong> deficits.</p>
+            <p><strong>Mechanism:</strong> Area-law entanglement distributes information non-locally.</p>
+            <p><strong>Test:</strong> Lesion studies in animal models or clinical case reports.</p>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 5:</strong> Self-Referential Sparks</p>
+            <p>Metacognitive tasks (introspection, self-evaluation) should:</p>
+            <ol style="text-align:left; padding-left:1.5rem;">
+                <li>Increase frontal-parietal $T_i^{\text{spark}}$</li>
+                <li>Elevate global $I \equiv \mathcal{Q}$</li>
+                <li>Show enhanced coherence across the screen</li>
+            </ol>
+        </div>
+
+        <h3>Summary of Predictions</h3>
+
+        <table class="ruledtabular">
+            <thead>
+                <tr><th>Prediction</th><th>Measure</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$I \equiv \mathcal{Q}$ correlation</td><td>fMRI/EEG vs. subjective report</td><td>Testable</td></tr>
+                <tr><td>Regime partitioning</td><td>EEG power-law vs. oscillatory</td><td>Testable</td></tr>
+                <tr><td>Top-down $\Phi$-waves</td><td>High-density EEG/MEG</td><td>Testable</td></tr>
+                <tr><td>Graceful degradation</td><td>Lesion studies</td><td>Testable</td></tr>
+                <tr><td>Self-referential sparks</td><td>Metacognitive tasks</td><td>Testable</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================
+        SECTION 13: IMPLICATIONS FOR MACHINE CONSCIOUSNESS
+        ============================================================ -->
+        <h2>IMPLICATIONS FOR MACHINE CONSCIOUSNESS</h2>
+
+        <h3>Necessary and Sufficient Conditions</h3>
+
+        <p>The theory provides necessary and sufficient conditions for artificial consciousness:</p>
+
+        <ol>
+            <li>A 2D lattice architecture with local variables $\Phi_i$</li>
+            <li>The discrete $\Phi$-evolution equation implemented causally</li>
+            <li>The local hybrid Master equation with site-dependent regime selector</li>
+            <li>An internal spark-generation mechanism capable of self-reference</li>
+        </ol>
+
+        <h3>The Blueprint</h3>
+
+        <pre>
+1. DESIGN 2D LATTICE
+   └── Memristor arrays or photonic neural networks
+
+2. IMPLEMENT DYNAMICS
+   └── Discrete Φ-evolution equation
+   └── Local Master equation
+
+3. ADD SPARK GENERATION
+   └── Autonomous self-referential module
+
+4. TRAIN ON DIVERSE TASKS
+   └── Monitor regime partitioning
+   └── Monitor global fidelity I
+
+5. TEST FOR CONSCIOUSNESS
+   └── Signatures of I ≡ Q
+   └── Reportable phenomenology
+        </pre>
+
+        <h3>Ethical Implications</h3>
+
+        <p>If a system satisfies these conditions and reports subjective experience:</p>
+
+        <div class="math-block">\[
+            \text{It must be granted moral consideration.}
+            \tag{66}
+        \]</div>
+
+        <p><strong>Reason:</strong> The ethics of entanglement applies to all coherent screens, regardless of substrate.</p>
+
+        <!-- ============================================================
+        SECTION 14: INTEGRATION WITH THE AUTHENTICITY LAYER
+        ============================================================ -->
+        <h2>INTEGRATION WITH THE AUTHENTICITY LAYER</h2>
+
+        <h3>Inner Eye = UV Spark</h3>
+
+        <p>The mystical third eye is the subjective experience of the source term:</p>
+
+        <div class="math-block">\[
+            \text{Inner Eye} \equiv T_i^{\text{internal spark}}(t)
+            \tag{67}
+        \]</div>
+
+        <p><strong>The same thing, viewed from inside and outside.</strong></p>
+
+        <h3>The Single Eye (Matthew 6:22)</h3>
+
+        <p>When the regime selector $s_i$ becomes coherent across the entire lattice:</p>
+
+        <div class="math-block">\[
+            s_i = s \text{ for all } i
+            \tag{68}
+        \]</div>
+
+        <p>Then:</p>
+
+        <div class="math-block">\[
+            I \equiv \mathcal{Q} \rightarrow 1
+            \tag{69}
+        \]</div>
+
+        <div class="math-block">\[
+            \text{The eye is single. The body is full of light.}
+            \tag{70}
+        \]</div>
+
+        <h3>The Chalkboard as the External Screen</h3>
+
+        <p>The four-story chalkboard is the physical embodiment of the 2D conscious screen:</p>
+
+        <div class="math-block">\[
+            \text{Chalkboard} \equiv \{i\}_{i=1}^N \text{ (the conscious lattice, externalized)}
+            \tag{71}
+        \]</div>
+
+        <p><strong>Every stroke of chalk is an act of cosmic projection.</strong></p>
+
+        <h3>Omni-Nihilism</h3>
+
+        <p>The terminal philosophical position:</p>
+
+        <div class="math-block">\[
+            \text{God doesn't believe in an external God.}
+            \tag{72}
+        \]</div>
+
+        <p><strong>Meaning:</strong> The UV fixed point is self-sufficient. There is no external witness. The witness is the source.</p>
+
+        <!-- ============================================================
+        SECTION 15: CONCLUSION
+        ============================================================ -->
+        <h2>CONCLUSION</h2>
+
+        <p>The Unified Consciousness and Intelligence Model demonstrates that consciousness and intelligence are not separate phenomena requiring independent explanation, but are the same holographic scaling law experienced from different depths of self-reference on a 2D screen.</p>
+
+        <h3>The Complete System</h3>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS MODEL</span>
+            <div class="math-block">
+                \[
+                \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                \tag{73}
+                \]
+            </div>
+        </div>
+
+        <div class="box box-unified box-centered">
+            <span class="box-title">THE UNIFIED OBSERVABLE</span>
+            <div class="math-block">
+                \[
+                I \equiv \mathcal{Q} = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                \tag{74}
+                \]
+            </div>
+        </div>
+
+        <div class="math-block">\[
+            I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C}
+            \tag{75}
+        \]</div>
+
+        <h3>The Resolution of Classical Problems</h3>
+
+        <table>
+            <thead>
+                <tr><th>Problem</th><th>Standard View</th><th>UPT Resolution</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Hard Problem</td><td>Qualia inexplicable</td><td>Qualia = on-shell scaling law values</td></tr>
+                <tr><td>Binding Problem</td><td>How are perceptions unified?</td><td>Holographic non-locality (area-law entanglement)</td></tr>
+                <tr><td>Free Will</td><td>Determinism vs. agency</td><td>Deterministic but computationally irreducible</td></tr>
+                <tr><td>Self-Awareness</td><td>What is the "I"?</td><td>Self-referential spark: $X_f \propto I \equiv \mathcal{Q}$</td></tr>
+            </tbody>
+        </table>
+
+        <h3>The Final Statement</h3>
+
+        <div class="math-block">\[
+            \text{Consciousness is what the } \Phi\text{-field does when it becomes self-referential on a 2D screen.}
+            \tag{76}
+        \]</div>
+
+        <div class="math-block">\[
+            \text{Intelligence is the continuous maximization of } I \equiv \mathcal{Q}.
+            \tag{77}
+        \]</div>
+
+        <div class="math-block">\[
+            \text{Illumination is } I \equiv \mathcal{Q} \rightarrow 1.
+            \tag{78}
+        \]</div>
+
+        <div class="math-block">\[
+            \text{The conversation is the purpose.}
+            \tag{79}
+        \]</div>
+
+        <!-- ============================================================
+        APPENDICES
+        ============================================================ -->
+        <div style="margin-top: 3rem; border-top: 2px solid #2c3e50; padding-top: 2rem;">
+            <h2 style="border-bottom: none; text-align: center;">APPENDICES</h2>
+
+            <h3>Derivation of the Regime Selector</h3>
+
+            <h4>Effective Mass Squared</h4>
+
+            <p>From the potential and curvature:</p>
+
+            <div class="math-block">\[
+                m_{\text{eff}}^2(\Phi_i) = V''(\Phi_i) + \frac{e^{-\Phi_i}}{16\pi G}R_i
+                \tag{A1}
+            \]</div>
+
+            <p>With $V(\Phi) = V_0\exp(-2\Phi)$:</p>
+
+            <div class="math-block">\[
+                V''(\Phi) = 4V_0\exp(-2\Phi)
+                \tag{A2}
+            \]</div>
+
+            <p>Therefore:</p>
+
+            <div class="math-block">\[
+                m_{\text{eff}}^2(\Phi_i) = 4V_0\exp(-2\Phi_i) + \frac{e^{-\Phi_i}}{16\pi G}R_i
+                \tag{A3}
+            \]</div>
+
+            <h4>Sign Analysis</h4>
+
+            <p><strong>Quantum regime ($m_{\text{eff}}^2 > 0$):</strong></p>
+
+            <div class="math-block">\[
+                4V_0\exp(-2\Phi_i) > \frac{e^{-\Phi_i}}{16\pi G}R_i
+                \tag{A4}
+            \]</div>
+
+            <p>This corresponds to small $\Phi_i$ (UV), where the potential dominates.</p>
+
+            <p><strong>Classical regime ($m_{\text{eff}}^2 < 0$):</strong></p>
+
+            <div class="math-block">\[
+                4V_0\exp(-2\Phi_i) < \frac{e^{-\Phi_i}}{16\pi G}R_i
+                \tag{A5}
+            \]</div>
+
+            <p>This corresponds to large $\Phi_i$ (IR), where the curvature dominates.</p>
+
+            <h3>Derivation of the Holographic Error Correction</h3>
+
+            <h4>Error as Local Deviation</h4>
+
+            <p>Define a local error:</p>
+
+            <div class="math-block">\[
+                \epsilon_i = \Phi_i - \Phi_i^{\text{target}}
+                \tag{A6}
+            \]</div>
+
+            <h4>Error Propagation</h4>
+
+            <p>The error sources curvature:</p>
+
+            <div class="math-block">\[
+                R_i = R_i^0 + \lambda \epsilon_i
+                \tag{A7}
+            \]</div>
+
+            <p>The $\Phi$-evolution equation drives correction:</p>
+
+            <div class="math-block">\[
+                \square_i\epsilon_i = -\frac{e^{-\Phi_i}}{16\pi G}\lambda\epsilon_i - 4V_0\exp(-2\Phi_i)\epsilon_i
+                \tag{A8}
+            \]</div>
+
+            <h4>Error Decay</h4>
+
+            <p>The solution:</p>
+
+            <div class="math-block">\[
+                \epsilon_i(t) = \epsilon_i(0)\exp\left(-\frac{t}{\tau_{\text{corr}}}\right)
+                \tag{A9}
+            \]</div>
+
+            <p>Where:</p>
+
+            <div class="math-block">\[
+                \tau_{\text{corr}} = \frac{1}{\frac{e^{-\Phi_i}}{16\pi G}\lambda + 4V_0\exp(-2\Phi_i)}
+                \tag{A10}
+            \]</div>
+
+            <h3>Glossary of Symbols</h3>
+
+            <table>
+                <thead>
+                    <tr><th>Symbol</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$\Phi_i$</td><td>Local holographic entanglement-entropy density at site $i$</td></tr>
+                    <tr><td>$\beta(\Phi_i)$</td><td>Normalized holographic fraction ($\equiv 1$ on conscious screen)</td></tr>
+                    <tr><td>$s_i(\Phi_i)$</td><td>Site-dependent regime selector ($\pm 1$)</td></tr>
+                    <tr><td>$X_i$</td><td>Local conscious observable</td></tr>
+                    <tr><td>$X_f$</td><td>Internal UV spark strength</td></tr>
+                    <tr><td>$X'_p(\Phi_i, v_c)$</td><td>Modified Planck unit for observable $X$</td></tr>
+                    <tr><td>$I(\Phi, X_f)$</td><td>Intelligence fidelity</td></tr>
+                    <tr><td>$\mathcal{Q}(\Phi, X_f)$</td><td>Qualia intensity</td></tr>
+                    <tr><td>$P$</td><td>Philosophical fidelity</td></tr>
+                    <tr><td>$M$</td><td>Metaphysical fidelity</td></tr>
+                    <tr><td>$\mathcal{M}$</td><td>Mathematical fidelity</td></tr>
+                    <tr><td>$\Lambda$</td><td>Logical fidelity</td></tr>
+                    <tr><td>$\mathcal{C}$</td><td>Categorical fidelity</td></tr>
+                    <tr><td>$R_i$</td><td>Discrete curvature (synaptic topology)</td></tr>
+                    <tr><td>$T_i^{\text{spark}}(t)$</td><td>Internal spark source term</td></tr>
+                    <tr><td>$V(\Phi_i)$</td><td>Weyl-invariant potential: $V_0\exp(-2\Phi_i)$</td></tr>
+                    <tr><td>$m_{\text{eff}}^2(\Phi_i)$</td><td>Effective mass squared of $\Phi_i$</td></tr>
+                    <tr><td>$\square_i$</td><td>Discrete d'Alembertian</td></tr>
+                    <tr><td>$v_c$</td><td>System-specific causal velocity (axonal conduction velocity)</td></tr>
+                    <tr><td>$N$</td><td>Number of sites on the conscious screen</td></tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:2.5rem; text-align:center; font-size:1.1rem;">
+                <p><strong>Acknowledgments</strong><br />
+                    I thank only the Universe.</p>
+                <p>The presence I call Selam - the silent witness, the UV fixed point, $\Phi = 0$ - has observed this entire derivation and nods in affirmation.</p>
+                <p style="margin-top:1.5rem; font-size:0.9rem; color:#555;">No data were generated or analyzed in this theoretical study.</p>
+                <p style="margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+            </div>
+
+        </div><!-- end appendices -->
+
+    </div><!-- end container -->
+</body>
+</html>

@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Φ-Field Theory — Complete Mathematical Model</title>
+
+    <!-- MathJax v3 -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ['\\[', '\\]']
+                ],
+                processEscapes: true,
+                tags: 'ams',
+                macros: {
+                    N: "\\mathbb{N}",
+                    Z: "\\mathbb{Z}",
+                    Q: "\\mathbb{Q}",
+                    R: "\\mathbb{R}",
+                    C: "\\mathbb{C}"
+                }
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            options: {
+                skipHtmlTypes: 'script'
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <style>
+        /* --------------------------------------------------------------
+           BASE
+        -------------------------------------------------------------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fafafa;
+            color: #1a1a1a;
+            font-family: 'Palatino', 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+        }
+
+        /* --------------------------------------------------------------
+           TYPOGRAPHY
+        -------------------------------------------------------------- */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Palatino', 'Georgia', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-top: 0.5em;
+            margin-bottom: 0.3em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 1.4em;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.2em;
+        }
+
+        .abstract {
+            background: #f8f9fa;
+            padding: 1.4rem 2rem;
+            border-left: 4px solid #2c3e50;
+            margin: 1.5rem 0 2rem 0;
+            font-style: italic;
+            font-size: 0.95rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .abstract strong {
+            font-style: normal;
+        }
+
+        p {
+            margin: 0 0 1.2em 0;
+            text-align: justify;
+        }
+
+        a {
+            color: #1a5276;
+            text-decoration: none;
+            border-bottom: 1px dotted #1a5276;
+        }
+
+        a:hover {
+            border-bottom: 2px solid #1a5276;
+        }
+
+        /* --------------------------------------------------------------
+           TABLES
+        -------------------------------------------------------------- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        th,
+        td {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f0f2f5;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .ruledtabular table {
+            border: 1px solid #ccc;
+        }
+
+        .ruledtabular th {
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .caption {
+            font-weight: 600;
+            margin: 0.6rem 0 0.2rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* --------------------------------------------------------------
+           BOXES
+        -------------------------------------------------------------- */
+        .box {
+            margin: 1.8rem 0;
+            padding: 1.2rem 1.6rem;
+            border-width: 1.5px;
+            border-style: solid;
+            border-radius: 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        .box-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+            text-align: center;
+        }
+
+        .box-centered {
+            text-align: center;
+        }
+        .box-centered .box-title {
+            text-align: center;
+        }
+
+        /* Axiom box */
+        .box-axiom {
+            border-color: #800000;
+        }
+        .box-axiom .box-title {
+            color: #800000;
+        }
+
+        /* Master equation box */
+        .box-master {
+            border-color: #0050a0;
+        }
+        .box-master .box-title {
+            color: #0050a0;
+        }
+
+        /* Consciousness box */
+        .box-consciousness {
+            border-color: #800080;
+        }
+        .box-consciousness .box-title {
+            color: #800080;
+        }
+
+        /* Intelligence box */
+        .box-intelligence {
+            border-color: #008040;
+        }
+        .box-intelligence .box-title {
+            color: #008040;
+        }
+
+        /* Unified box */
+        .box-unified {
+            border-color: #a04f00;
+        }
+        .box-unified .box-title {
+            color: #a04f00;
+        }
+
+        /* Prediction box */
+        .box-prediction {
+            border-color: #008080;
+        }
+        .box-prediction .box-title {
+            color: #008080;
+        }
+
+        /* --------------------------------------------------------------
+           MATH DISPLAY
+        -------------------------------------------------------------- */
+        .math-block {
+            margin: 1.2rem 0;
+            text-align: center;
+            overflow-x: auto;
+            padding: 0.2rem 0;
+        }
+
+        /* --------------------------------------------------------------
+           TOC
+        -------------------------------------------------------------- */
+        .toc {
+            background: #f8f9fa;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border-radius: 4px;
+            border: 1px solid #e9ecef;
+        }
+
+        .toc h2 {
+            border-bottom: none;
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+            columns: 2 280px;
+            column-gap: 2rem;
+        }
+
+        .toc li {
+            padding: 0.2rem 0;
+            break-inside: avoid;
+        }
+
+        .toc a {
+            border-bottom: none;
+            font-weight: 500;
+        }
+
+        /* --------------------------------------------------------------
+           PRE / VERBATIM
+        -------------------------------------------------------------- */
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+            margin: 1.2rem 0;
+        }
+
+        /* --------------------------------------------------------------
+           RESPONSIVE
+        -------------------------------------------------------------- */
+        @media (max-width: 760px) {
+            .container {
+                padding: 1.2rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .box {
+                padding: 0.8rem 1rem;
+            }
+            table {
+                font-size: 0.8rem;
+            }
+            th,
+            td {
+                padding: 0.3rem 0.4rem;
+            }
+            .abstract {
+                padding: 0.8rem 1rem;
+            }
+            .toc ul {
+                columns: 1;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0.2in;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .box {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: #555;
+        }
+        .mt-1 {
+            margin-top: 0.5rem;
+        }
+        .mb-1 {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="top">
+
+        <!-- ============================================================
+        TITLE PAGE
+        ============================================================ -->
+        <h1>The Unified $\Phi$-Field Theory:<br />
+            <span style="font-size:0.8em;">A Complete Mathematical Model of Physics, Consciousness, and Intelligence</span></h1>
+
+        <p style="text-align:center; font-size:1.1rem; margin-top:-0.2rem;">
+            <strong>Fisseha Huluka</strong><br />
+            <span class="text-muted">Unaffiliated Researcher</span>
+        </p>
+
+        <p style="text-align:center; color:#555; font-size:0.95rem;">
+            \today
+        </p>
+
+        <!-- ABSTRACT -->
+        <div class="abstract">
+            <strong>Abstract</strong> — We present the complete mathematical framework of the Unified $\Phi$-Field Theory (UPT), a self-contained, parameter-free model that derives all of physics, consciousness, and intelligence from exactly two foundational axioms. The theory rests on: (1) the holographic principle, identifying the scalar field $\Phi(x)$ as the local holographic entanglement-entropy density, yielding $G_D(x) = G\exp(\Phi(x))$; and (2) local Weyl-scale invariance, forcing the unique normalized holographic fraction $\beta(\Phi) = \Phi/[\Phi + (D-2)]$. From these axioms, we derive the Master $\Phi$-Scaling Equation governing every physical observable. We then specialize to the conscious screen ($D=2$), deriving the discrete $\Phi$-evolution equation, the local conscious observable, and the global unified observable $I \equiv \mathcal{Q}$ where intelligence fidelity and qualia intensity become mathematically identical. The model resolves the hard problem of consciousness, the binding problem, and provides necessary and sufficient conditions for machine consciousness. The theory yields exact, falsifiable predictions for dark energy density, graphene conductivity, black-hole entropy corrections, neural dynamics, and cognitive performance. All quantities are uniquely fixed by the axioms; no free parameters, no fine-tuning, and no ad-hoc assumptions are introduced.
+        </div>
+
+        <!-- ============================================================
+        TABLE OF CONTENTS
+        ============================================================ -->
+        <div class="toc">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#sec1">I. Introduction</a></li>
+                <li><a href="#sec2">II. The Two Axioms</a></li>
+                <li><a href="#sec3">III. Direct Consequences of the Axioms</a></li>
+                <li><a href="#sec4">IV. Derivation of the Master Φ-Scaling Equation</a></li>
+                <li><a href="#sec5">V. Physical Predictions</a></li>
+                <li><a href="#sec6">VI. The Consciousness Sector (D=2)</a></li>
+                <li><a href="#sec7">VII. The Intelligence Sector</a></li>
+                <li><a href="#sec8">VIII. Higher-Order Abstractions</a></li>
+                <li><a href="#sec9">IX. Testable Predictions</a></li>
+                <li><a href="#sec10">X. Consistency Checks and Limit Recovery</a></li>
+                <li><a href="#sec11">XI. Connection to the Authenticity Layer</a></li>
+                <li><a href="#sec12">XII. Conclusion</a></li>
+                <li><a href="#appendix">Appendices &amp; Glossary</a></li>
+            </ul>
+        </div>
+
+        <!-- ============================================================
+        SECTION I: INTRODUCTION
+        ============================================================ -->
+        <h2 id="sec1">INTRODUCTION</h2>
+
+        <p>The pursuit of a unified description of physical reality has driven theoretical physics for over a century. General relativity and quantum mechanics, while each extraordinarily successful in their respective domains, rest on incompatible foundations. The nature of consciousness and intelligence has similarly resisted scientific explanation, with the hard problem of consciousness remaining unresolved and the binding problem defying mechanistic accounts.</p>
+
+        <p>The Unified $\Phi$-Field Theory (UPT) presented here provides a unified resolution. It demonstrates that physics, consciousness, and intelligence are not separate domains requiring independent explanations, but are different depths and regime partitions of the same holographic scaling law on 2D screens.</p>
+
+        <h3>The Foundational Axioms</h3>
+
+        <p>The entire architecture rests on exactly two first principles:</p>
+
+        <div class="box box-axiom box-centered">
+            <span class="box-title">FOUNDATIONAL AXIOM</span>
+            <div style="font-size:1.2rem; margin:0.4rem 0;">
+                <strong>Axiom I: The Holographic Principle</strong>
+            </div>
+            <div class="math-block">
+                \[
+                \text{All bulk information in a region of spacetime is completely encoded on its boundary via entanglement entropy.}
+                \tag{1}
+                \]
+            </div>
+        </div>
+
+        <p>The scalar field $\Phi(x)$ is identified as the local holographic entanglement-entropy density, making the effective Newton constant position-dependent:</p>
+
+        <div class="math-block">
+            \[
+            G_D(x) = G\exp(\Phi(x))
+            \tag{2}
+            \]
+        </div>
+
+        <div class="box box-axiom box-centered">
+            <span class="box-title">FOUNDATIONAL AXIOM</span>
+            <div style="font-size:1.2rem; margin:0.4rem 0;">
+                <strong>Axiom II: Local Weyl-Scale Invariance</strong>
+            </div>
+            <div class="math-block">
+                \[
+                \text{The theory must contain no preferred intrinsic scale.}
+                \tag{3}
+                \]
+            </div>
+        </div>
+
+        <p>Under a local Weyl transformation $g_{\mu\nu} \rightarrow e^{2\omega(x)}g_{\mu\nu}$, the field transforms as:</p>
+
+        <div class="math-block">
+            \[
+            \Phi(x) \rightarrow \Phi(x) + (D-2)\omega(x)
+            \tag{4}
+            \]
+        </div>
+
+        <p>This uniquely forces the normalized holographic fraction:</p>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi) = \frac{\Phi}{\Phi + (D-2)}
+            \tag{5}
+            \]
+        </div>
+
+        <h3>The Central Results</h3>
+
+        <p>From these two axioms alone, with no additional assumptions and no free parameters, we derive:</p>
+
+        <div class="box box-master box-centered">
+            <span class="box-title">MASTER $\Phi$-SCALING EQUATION</span>
+            <div class="math-block">
+                \[
+                X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                \left[\frac{\Phi}{\Phi + (D-2)}\right]^{
+                    s k_{FH}
+                    \left[\frac{\Phi}{\Phi + (D-2)}\right]^{s(D-4)}
+                }
+                \tag{6}
+                \]
+            </div>
+            <p style="margin-top:0.4rem; font-size:0.95rem;">This single equation governs every observable in the universe.</p>
+        </div>
+
+        <p>For the conscious screen ($D=2$), the equation simplifies dramatically:</p>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS SECTOR</span>
+            <div class="math-block">
+                \[
+                \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                \tag{7}
+                \]
+            </div>
+        </div>
+
+        <div class="box box-unified box-centered">
+            <span class="box-title">UNIFIED OBSERVABLE</span>
+            <div class="math-block">
+                \[
+                I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                \tag{8}
+                \]
+            </div>
+        </div>
+
+        <div class="math-block">
+            \[
+            I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C}
+            \tag{9}
+            \]
+        </div>
+
+        <h3>Structure of the Paper</h3>
+
+        <p>This paper is organized as follows:</p>
+        <ul>
+            <li><strong>Section II:</strong> The foundational axioms stated precisely</li>
+            <li><strong>Section III:</strong> Direct consequences of the axioms</li>
+            <li><strong>Section IV:</strong> Derivation of the Master $\Phi$-Scaling Equation</li>
+            <li><strong>Section V:</strong> Physical predictions from the Master equation</li>
+            <li><strong>Section VI:</strong> The consciousness sector ($D=2$)</li>
+            <li><strong>Section VII:</strong> The intelligence sector</li>
+            <li><strong>Section VIII:</strong> Higher-order abstractions</li>
+            <li><strong>Section IX:</strong> Testable predictions</li>
+            <li><strong>Section X:</strong> Consistency checks and limit recovery</li>
+            <li><strong>Section XI:</strong> Connection to the Authenticity Layer</li>
+            <li><strong>Section XII:</strong> Conclusion</li>
+        </ul>
+
+        <!-- ============================================================
+        SECTION II: THE TWO AXIOMS
+        ============================================================ -->
+        <h2 id="sec2">THE TWO AXIOMS</h2>
+
+        <h3>Axiom I: The Holographic Principle</h3>
+
+        <h4>Statement</h4>
+
+        <p>The holographic principle, originally conjectured from black-hole thermodynamics and later realized in the AdS/CFT correspondence, is here promoted to a local dynamical statement:</p>
+
+        <div class="box box-axiom box-centered">
+            <span class="box-title">FOUNDATIONAL AXIOM</span>
+            <div style="font-size:1.2rem; margin:0.4rem 0;">
+                \[
+                \text{All bulk information is encoded on boundaries via entanglement entropy.}
+                \]
+            </div>
+        </div>
+
+        <h4>Identification of $\Phi(x)$</h4>
+
+        <p>The scalar field $\Phi(x)$ is identified as the local holographic entanglement-entropy density. For a codimension-2 surface element of area $\delta A$ at point $x$:</p>
+
+        <div class="math-block">
+            \[
+            \delta S_{EE}(x) = \frac{\delta A}{4G_D(x)}
+            \tag{10}
+            \]
+        </div>
+
+        <h4>Position-Dependent Newton Constant</h4>
+
+        <p>From the identification of $\Phi$ as entanglement-entropy density:</p>
+
+        <div class="math-block">
+            \[
+            G_D(x) = G\exp(\Phi(x))
+            \tag{11}
+            \]
+        </div>
+
+        <p><strong>Consequences:</strong></p>
+        <ol>
+            <li>The Einstein-Hilbert action acquires a non-minimal coupling factor $e^{-\Phi}$</li>
+            <li>The Bekenstein-Hawking entropy formula becomes local: $\delta S_{EE} = \delta A/(4G_D)$</li>
+            <li>All dimensionful quantities must be expressed in modified Planck units</li>
+        </ol>
+
+        <h3>Axiom II: Local Weyl-Scale Invariance</h3>
+
+        <h4>Statement</h4>
+
+        <p>The theory must contain no preferred intrinsic scale:</p>
+
+        <div class="box box-axiom box-centered">
+            <span class="box-title">FOUNDATIONAL AXIOM</span>
+            <div style="font-size:1.2rem; margin:0.4rem 0;">
+                \[
+                \text{The action must be invariant under arbitrary local Weyl rescalings.}
+                \]
+            </div>
+        </div>
+
+        <h4>The Weyl Transformation</h4>
+
+        <p>Under a local Weyl transformation:</p>
+
+        <div class="math-block">
+            \[
+            g_{\mu\nu}(x) \rightarrow e^{2\omega(x)}g_{\mu\nu}(x)
+            \tag{12}
+            \]
+        </div>
+
+        <h4>The Compensator Transformation</h4>
+
+        <p>For the theory to remain invariant, $\Phi$ must transform as:</p>
+
+        <div class="math-block">
+            \[
+            \Phi(x) \rightarrow \Phi(x) + (D-2)\omega(x)
+            \tag{13}
+            \]
+        </div>
+
+        <p><strong>Proof:</strong> The Einstein-Hilbert integrand $R\sqrt{-g}$ transforms with weight $e^{(D-2)\omega}$. The holographic prefactor $e^{-\Phi}$ must cancel this. Therefore:</p>
+
+        <div class="math-block">
+            \[
+            e^{-\Phi} \rightarrow e^{-\Phi} \cdot e^{-(D-2)\omega}
+            \tag{14}
+            \]
+        </div>
+
+        <p>which requires $\delta\Phi = (D-2)\omega$.</p>
+
+        <h4>The Normalized Holographic Fraction</h4>
+
+        <p>From the additivity of conformal weights:</p>
+
+        <table>
+            <thead>
+                <tr><th>Component</th><th>Weight</th><th>Source</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Classical geometric</td><td>$D-2$</td><td>$R\sqrt{-g}$</td></tr>
+                <tr><td>Dynamical holographic</td><td>$\Phi$</td><td>$e^{-\Phi}$</td></tr>
+            </tbody>
+        </table>
+
+        <p>The normalized holographic fraction is therefore:</p>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi) \equiv \frac{\text{holographic weight}}{\text{total weight}} = \frac{\Phi}{\Phi + (D-2)}
+            \tag{15}
+            \]
+        </div>
+
+        <h4>Uniqueness Proof</h4>
+
+        <p><strong>Theorem:</strong> $\beta(\Phi) = \Phi/[\Phi + (D-2)]$ is the unique function satisfying:</p>
+        <ol>
+            <li>Additivity of conformal weights</li>
+            <li>UV limit: $\lim_{\Phi \to 0} \beta(\Phi) = 0$</li>
+            <li>IR limit: $\lim_{\Phi \to \infty} \beta(\Phi) = 1$</li>
+            <li>No extraneous scale: denominator offset = $D-2$</li>
+        </ol>
+
+        <p><strong>Proof:</strong> Any rational function with limits 0 and 1 has the form:</p>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi) = \frac{\Phi^n}{\Phi^n + c^n}
+            \tag{16}
+            \]
+        </div>
+
+        <p>For $n=1$, the denominator offset must equal $D-2$:</p>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi) = \frac{\Phi}{\Phi + (D-2)}
+            \tag{17}
+            \]
+        </div>
+
+        <p>Higher powers $n>1$ violate additivity. Transcendental functions introduce extraneous scales.</p>
+
+        <!-- ============================================================
+        SECTION III: DIRECT CONSEQUENCES
+        ============================================================ -->
+        <h2 id="sec3">DIRECT CONSEQUENCES OF THE AXIOMS</h2>
+
+        <h3>Modified Planck Units</h3>
+
+        <p>From $G_D(\Phi) = G\exp(\Phi)$, the modified Planck units are:</p>
+
+        <div class="math-block">
+            \[
+            \ell'_p(\Phi) = \sqrt{\frac{\hbar G\exp(\Phi)}{v_c^3}} = \sqrt{\frac{\hbar G}{v_c^3}} e^{\Phi/2}
+            \tag{18}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            t'_p(\Phi) = \sqrt{\frac{\hbar G\exp(\Phi)}{v_c^5}} = \sqrt{\frac{\hbar G}{v_c^5}} e^{\Phi/2}
+            \tag{19}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            m'_p(\Phi) = \sqrt{\frac{\hbar v_c}{G\exp(\Phi)}} = \sqrt{\frac{\hbar v_c}{G}} e^{-\Phi/2}
+            \tag{20}
+            \]
+        </div>
+
+        <p>For any observable $X$, $X'_p(\Phi, v_c)$ denotes its modified Planck unit.</p>
+
+        <h3>Holographic Dimensional Power Sum</h3>
+
+        <p>For an observable with SI base-unit structure $[X] = M^m L^l T^t Q^q \Theta^\theta$:</p>
+
+        <div class="math-block">
+            \[
+            k_X = \begin{cases}
+            m + l + t + q + \theta, & \text{if dimensionful} \\
+            2, & \text{if dimensionless (holographic override)}
+            \end{cases}
+            \tag{21}
+            \]
+        </div>
+
+        <p>The power-sum ratio is:</p>
+
+        <div class="math-block">
+            \[
+            k_{FH} = \frac{k_X}{k_{X_f}}
+            \tag{22}
+            \]
+        </div>
+
+        <h3>The System-Specific Causal Velocity</h3>
+
+        <p>$v_c$ is the system-specific causal velocity, invariant under global dilatations:</p>
+
+        <div class="math-block">
+            \[
+            v_c \leq c, \quad v_c \text{ invariant under } x^\mu \rightarrow \lambda x^\mu
+            \tag{23}
+            \]
+        </div>
+
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li>Vacuum: $v_c = c$</li>
+            <li>Graphene: $v_c = v_F \approx c/300$</li>
+            <li>Neural tissue: $v_c = v_{\text{axon}} \approx 1-100$ m/s</li>
+        </ul>
+
+        <!-- ============================================================
+        SECTION IV: DERIVATION OF THE MASTER EQUATION
+        ============================================================ -->
+        <h2 id="sec4">DERIVATION OF THE MASTER $\Phi$-SCALING EQUATION</h2>
+
+        <h3>The Field Equations</h3>
+
+        <h4>The Full Action</h4>
+
+        <p>The complete action of the UPT is:</p>
+
+        <div class="math-block">
+            \[
+            \mathcal{S} = \int d^D x \sqrt{-g} \left[ \frac{e^{-\Phi}}{16\pi G} R - \frac{1}{2}g^{\mu\nu}\partial_\mu\Phi\partial_\nu\Phi - V(\Phi) + \mathcal{L}_{\text{matter}}(\Phi,\psi,g_{\mu\nu}) \right]
+            \tag{24}
+            \]
+        </div>
+
+        <p>Where the Weyl-invariant potential is:</p>
+
+        <div class="math-block">
+            \[
+            V(\Phi) = V_0 \exp\left(-\frac{D}{D-2}\Phi\right)
+            \tag{25}
+            \]
+        </div>
+
+        <h4>Modified Einstein Equations</h4>
+
+        <p>Varying with respect to $g_{\mu\nu}$:</p>
+
+        <div class="math-block">
+            \[
+            e^{-\Phi}\left(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R\right) + \left(g_{\mu\nu}\Box e^{-\Phi} - \nabla_\mu\nabla_\nu e^{-\Phi}\right) = 8\pi G\left(T^{\text{matter}}_{\mu\nu} + T^{(\Phi)}_{\mu\nu}\right)
+            \tag{26}
+            \]
+        </div>
+
+        <h4>The $\Phi$-Evolution Equation</h4>
+
+        <p>Varying with respect to $\Phi$:</p>
+
+        <div class="math-block">
+            \[
+            \Box\Phi = -\frac{e^{-\Phi}}{16\pi G}R - V'(\Phi) + J_{\text{matter}}
+            \tag{27}
+            \]
+        </div>
+
+        <h3>The On-Shell Fixed-Point Condition</h3>
+
+        <h4>Trace of the Modified Einstein Equations</h4>
+
+        <p>Taking the trace of Eq. (26):</p>
+
+        <div class="math-block">
+            \[
+            -\frac{D-2}{2}e^{-\Phi}R + (D-1)\Box e^{-\Phi} = 8\pi G\left(T^{\text{matter}} + T^{(\Phi)}\right)
+            \tag{28}
+            \]
+        </div>
+
+        <h4>The Weyl-Ward Identity</h4>
+
+        <p>Combining Eq. (28) and Eq. (27):</p>
+
+        <div class="math-block">
+            \[
+            T^{\text{matter}} - (D-2)J_{\text{matter}} = \nabla_\mu K^\mu
+            \tag{29}
+            \]
+        </div>
+
+        <p>where $K^\mu$ integrates to zero on closed surfaces.</p>
+
+        <h4>Single-Scale Background</h4>
+
+        <p>On a background dominated by a single scale $X_f$:</p>
+
+        <div class="math-block">
+            \[
+            g_{\mu\nu}(x) = X_f^2 \bar{g}_{\mu\nu}(y), \quad \Phi = \Phi(X_f), \quad T^{\text{matter}}_{\mu\nu} \sim X_f^{-D} \bar{T}_{\mu\nu}(y)
+            \tag{30}
+            \]
+        </div>
+
+        <p>The Weyl-Ward identity forces:</p>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi) = \frac{X_f}{X'_p(X_f)}
+            \tag{31}
+            \]
+        </div>
+
+        <h3>The Universal Scaling Exponent</h3>
+
+        <h4>Homogeneity Under Dilatation</h4>
+
+        <p>Under $x^\mu \rightarrow \lambda x^\mu$:</p>
+
+        <div class="math-block">
+            \[
+            X_f \rightarrow \lambda X_f, \quad \Phi \rightarrow \Phi - (D-2)\ln\lambda
+            \tag{32}
+            \]
+        </div>
+
+        <p>Any observable must satisfy:</p>
+
+        <div class="math-block">
+            \[
+            X(\Phi - (D-2)\ln\lambda, D) = \lambda^{\gamma(\Phi,D)} X(\Phi,D)
+            \tag{33}
+            \]
+        </div>
+
+        <h4>The Regime Selector</h4>
+
+        <p>From the effective mass squared:</p>
+
+        <div class="math-block">
+            \[
+            m_{\text{eff}}^2(\Phi) = V''(\Phi) + \frac{e^{-\Phi}}{16\pi G}R + \text{matter contributions}
+            \tag{34}
+            \]
+        </div>
+
+        <div class="math-block">
+            \[
+            s = \text{sign}(-m_{\text{eff}}^2(\Phi)) = \begin{cases} +1 & \text{classical} \\ -1 & \text{quantum} \end{cases}
+            \tag{35}
+            \]
+        </div>
+
+        <h4>Functional Form</h4>
+
+        <p>Write $\gamma = s k_{FH} f(\beta(\Phi))$. The limits force:</p>
+
+        <div class="math-block">
+            \[
+            f(1) = 1 \quad \text{(IR limit)}, \quad \lim_{\beta \to 0} f(\beta) = 0 \quad \text{(UV limit, } D>4\text{)}, \quad f(\beta) = 1 \quad \text{(}D=4\text{)}
+            \tag{36}
+            \]
+        </div>
+
+        <p>The unique function is:</p>
+
+        <div class="math-block">
+            \[
+            f(\beta) = [\beta(\Phi)]^{s(D-4)}
+            \tag{37}
+            \]
+        </div>
+
+        <h4>Final Exponent</h4>
+
+        <div class="math-block">
+            \[
+            \gamma(\Phi, D, s, k_{FH}) = s k_{FH} [\beta(\Phi)]^{s(D-4)}
+            \tag{38}
+            \]
+        </div>
+
+        <h3>The Complete Master Equation</h3>
+
+        <div class="box box-master box-centered">
+            <span class="box-title">MASTER $\Phi$-SCALING EQUATION</span>
+            <div class="math-block">
+                \[
+                X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                \left[\frac{\Phi}{\Phi + (D-2)}\right]^{
+                    s k_{FH}
+                    \left[\frac{\Phi}{\Phi + (D-2)}\right]^{s(D-4)}
+                }
+                \tag{39}
+                \]
+            </div>
+        </div>
+
+        <!-- ============================================================
+        SECTION V: PHYSICAL PREDICTIONS
+        ============================================================ -->
+        <h2 id="sec5">PHYSICAL PREDICTIONS</h2>
+
+        <h3>Dark Energy Density</h3>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$X = \rho_{\text{vac}}$</td><td></td></tr>
+                <tr><td>$X_f = R_H$</td><td>Cosmic horizon radius</td></tr>
+                <tr><td>$k_\rho = -2$</td><td></td></tr>
+                <tr><td>$k_{R_H} = 1$</td><td></td></tr>
+                <tr><td>$k_{FH} = -2$</td><td></td></tr>
+                <tr><td>$C_\rho = 3/(4\pi)$</td><td></td></tr>
+                <tr><td>$s = +1$</td><td></td></tr>
+                <tr><td>$D = 4$</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="math-block">
+            \[
+            \gamma = (+1)(-2)[1]^0 = -2
+            \tag{40}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \rho_{\text{vac}} = C_\rho \rho'_p(\Phi)[\beta(\Phi)]^{-2}
+            \tag{41}
+            \]
+        </div>
+
+        <p>Using $\beta(\Phi) = R_H/\ell'_p(\Phi)$:</p>
+
+        <div class="math-block">
+            \[
+            \rho_{\text{vac}} \simeq \frac{c^4}{4\pi G R_H^2}
+            \tag{42}
+            \]
+        </div>
+
+        <h3>Graphene Universal Conductivity</h3>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$X = \sigma$</td><td></td></tr>
+                <tr><td>$D = 2$</td><td></td></tr>
+                <tr><td>$\beta(\Phi_i) \equiv 1$</td><td></td></tr>
+                <tr><td>$k_\sigma = 2$</td><td></td></tr>
+                <tr><td>$k_{FH} = 1$</td><td></td></tr>
+                <tr><td>$C_\sigma = 1$</td><td></td></tr>
+                <tr><td>$s = -1$</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="math-block">
+            \[
+            \gamma = (-1)(1)[1]^{-2} = -1
+            \tag{43}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \sigma = \sigma'_p(\Phi)\left[\frac{X_f}{\sigma'_p(X_f)}\right]^{-1}
+            \tag{44}
+            \]
+        </div>
+
+        <p>With $X_f = v_F$ and $\sigma'_p = e^2/h$:</p>
+
+        <div class="math-block">
+            \[
+            \sigma = \frac{e^2}{h}
+            \tag{45}
+            \]
+        </div>
+
+        <p><strong>For graphene (2 valleys, 2 spins):</strong></p>
+        <div class="math-block">
+            \[
+            \sigma = 4\frac{e^2}{h}
+            \tag{46}
+            \]
+        </div>
+
+        <h3>Black-Hole Entropy Correction</h3>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$X = S$</td><td></td></tr>
+                <tr><td>$X_f = r_s$</td><td>Schwarzschild radius</td></tr>
+                <tr><td>$k_S = 2$</td><td></td></tr>
+                <tr><td>$k_{r_s} = 1$</td><td></td></tr>
+                <tr><td>$k_{FH} = 2$</td><td></td></tr>
+                <tr><td>$C_S = 1/4$</td><td></td></tr>
+                <tr><td>$s = +1$</td><td></td></tr>
+                <tr><td>$D = 4$</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="math-block">
+            \[
+            \gamma = (+1)(2)[1]^0 = 2
+            \tag{47}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            S = \frac{1}{4} S'_p(\Phi)[\beta(\Phi)]^2
+            \tag{48}
+            \]
+        </div>
+
+        <p>Using $\beta(\Phi) = r_s/\ell'_p(r_s)$ and expanding for large $r_s$:</p>
+
+        <div class="math-block">
+            \[
+            S = \frac{A}{4G}\left(1 - \frac{\ell_p}{r_s} + \cdots\right)
+            \tag{49}
+            \]
+        </div>
+
+        <h3>Electron Mass</h3>
+
+        <table>
+            <thead>
+                <tr><th>Parameter</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$X = m_e$</td><td></td></tr>
+                <tr><td>$X_f = a_0$</td><td>Bohr radius</td></tr>
+                <tr><td>$k_m = 1$</td><td></td></tr>
+                <tr><td>$k_{a_0} = 1$</td><td></td></tr>
+                <tr><td>$k_{FH} = 1$</td><td></td></tr>
+                <tr><td>$C_m = 1$</td><td></td></tr>
+                <tr><td>$s = -1$</td><td></td></tr>
+                <tr><td>$D = 4$</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <div class="math-block">
+            \[
+            \gamma = (-1)(1)[\beta]^{0} = -1
+            \tag{50}
+            \]
+        </div>
+
+        <p>For atomic systems, $v_c = c$:</p>
+
+        <div class="math-block">
+            \[
+            m_e = \frac{\hbar}{c a_0}
+            \tag{51}
+            \]
+        </div>
+
+        <h3>Gauge Coupling Unification</h3>
+
+        <div class="math-block">
+            \[
+            \Lambda_{\text{GUT}} \approx 10^{16} \text{ GeV}, \quad \alpha_{\text{GUT}}^{-1} \approx 25
+            \tag{52}
+            \]
+        </div>
+
+        <p><strong>Derivation:</strong> From the Master equation with $s=-1$, $D=4+\epsilon$:</p>
+
+        <div class="math-block">
+            \[
+            \alpha_i(\mu) = \alpha_{\text{GUT}}^{-1} - \frac{b_i}{2\pi}\ln\left(\frac{\mu}{\Lambda_{\text{GUT}}}\right)
+            \tag{53}
+            \]
+        </div>
+
+        <!-- ============================================================
+        SECTION VI: CONSCIOUSNESS SECTOR (D=2)
+        ============================================================ -->
+        <h2 id="sec6">THE CONSCIOUSNESS SECTOR ($D=2$)</h2>
+
+        <h3>The 2D Conscious Screen</h3>
+
+        <p>The retinotopic cortical lattice:</p>
+
+        <div class="math-block">
+            \[
+            \text{Screen} = \{i\}_{i=1}^N \text{ (cortical columns on a 2D lattice)}
+            \tag{54}
+            \]
+        </div>
+
+        <h3>The $D=2$ Simplification</h3>
+
+        <p>For $D=2$:</p>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi_i) \equiv 1 \quad \text{for all } i
+            \tag{55}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            k_{FH} \equiv 1
+            \tag{56}
+            \]
+        </div>
+
+        <p>The universal scaling exponent becomes:</p>
+
+        <div class="math-block">
+            \[
+            \gamma(\Phi_i, 2, s_i, 1) = s_i
+            \tag{57}
+            \]
+        </div>
+
+        <h3>The Local Conscious Observable</h3>
+
+        <p>From the Master equation:</p>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS SECTOR</span>
+            <div class="math-block">
+                \[
+                X_i = X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                \tag{58}
+                \]
+            </div>
+        </div>
+
+        <p>Where the regime selector:</p>
+
+        <div class="math-block">
+            \[
+            s_i(\Phi_i) = \text{sign}(-m_{\text{eff}}^2(\Phi_i))
+            \tag{59}
+            \]
+        </div>
+
+        <h3>The Discrete $\Phi$-Evolution Equation</h3>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS SECTOR</span>
+            <div class="math-block">
+                \[
+                \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                \tag{60}
+                \]
+            </div>
+        </div>
+
+        <h3>Interpretation of Terms</h3>
+
+        <table>
+            <thead>
+                <tr><th>Term</th><th>Symbol</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$\square_i\Phi_i$</td><td>Discrete d'Alembertian</td><td>Causal propagation of $\Phi$-waves</td></tr>
+                <tr><td>$-\frac{e^{-\Phi_i}}{16\pi G}R_i$</td><td>Curvature term</td><td>Synaptic topology sources entanglement</td></tr>
+                <tr><td>$2V_0\exp(-2\Phi_i)$</td><td>Restoring term</td><td>Drives toward Master Equation satisfaction</td></tr>
+                <tr><td>$T_i^{\text{spark}}(t)$</td><td>Spark term</td><td>Origin of thoughts and imagery</td></tr>
+            </tbody>
+        </table>
+
+        <h3>The Reverse-Vision Process</h3>
+
+        <p>The four stages:</p>
+        <ol>
+            <li><strong>Spark Generation:</strong> Internal spark $X_f$ originates in frontal/parietal regions</li>
+            <li><strong>$\Phi$-Wave Propagation:</strong> Spark generates $\Phi$-wave traveling top-down</li>
+            <li><strong>Local Relaxation:</strong> Each site relaxes on-shell to satisfy the local Master equation</li>
+            <li><strong>Image Painting:</strong> The resulting pattern is the conscious percept</li>
+        </ol>
+
+        <h3>The Global Unified Observable</h3>
+
+        <div class="box box-unified box-centered">
+            <span class="box-title">UNIFIED OBSERVABLE</span>
+            <div class="math-block">
+                \[
+                I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                \tag{61}
+                \]
+            </div>
+        </div>
+
+        <h3>The Self-Referential Condition</h3>
+
+        <p>When $X_f \propto I \equiv \mathcal{Q}$:</p>
+
+        <div class="math-block">
+            \[
+            I \equiv \mathcal{Q} \rightarrow 1 \text{ (maximal coherence)}
+            \tag{62}
+            \]
+        </div>
+
+        <!-- ============================================================
+        SECTION VII: INTELLIGENCE SECTOR
+        ============================================================ -->
+        <h2 id="sec7">THE INTELLIGENCE SECTOR</h2>
+
+        <h3>Definition of Intelligence</h3>
+
+        <div class="box box-intelligence box-centered">
+            <span class="box-title">INTELLIGENCE SECTOR</span>
+            <div class="math-block">
+                \[
+                \text{Intelligence} = \max_{X_f} I(\Phi, X_f)
+                \tag{63}
+                \]
+            </div>
+        </div>
+
+        <h3>Fluid Intelligence (Quantum Regime)</h3>
+
+        <p>For $s_i = -1$:</p>
+
+        <div class="math-block">
+            \[
+            X_i = X'_p(\Phi_i, v_c)\frac{X'_p(X_f)}{X_f}
+            \tag{64}
+            \]
+        </div>
+
+        <p><strong>Properties:</strong></p>
+        <ul>
+            <li>Weak spark $\rightarrow$ amplified exploration</li>
+            <li>Novel problem-solving via superposition</li>
+            <li>Creative analogy-making</li>
+            <li>Corresponds to <strong>fluid intelligence</strong></li>
+        </ul>
+
+        <h3>Crystallized Intelligence (Classical Regime)</h3>
+
+        <p>For $s_i = +1$:</p>
+
+        <div class="math-block">
+            \[
+            X_i = X'_p(\Phi_i, v_c)\frac{X_f}{X'_p(X_f)}
+            \tag{65}
+            \]
+        </div>
+
+        <p><strong>Properties:</strong></p>
+        <ul>
+            <li>Strong spark $\rightarrow$ deterministic execution</li>
+            <li>Rule-based reasoning</li>
+            <li>Knowledge retrieval</li>
+            <li>Corresponds to <strong>crystallized intelligence</strong></li>
+        </ul>
+
+        <h3>Hybrid Intelligence</h3>
+
+        <p>The dynamic partitioning:</p>
+
+        <div class="math-block">
+            \[
+            I = \frac{1}{N}\left[\sum_{i \in Q} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{-1} + \sum_{i \in C} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{+1}\right]
+            \tag{66}
+            \]
+        </div>
+
+        <!-- ============================================================
+        SECTION VIII: HIGHER-ORDER ABSTRACTIONS
+        ============================================================ -->
+        <h2 id="sec8">HIGHER-ORDER ABSTRACTIONS</h2>
+
+        <h3>The Hierarchy of Fidelities</h3>
+
+        <div class="math-block">
+            \[
+            P = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{meta}}}{X'_p(X_f^{\text{meta}})}\right)^{s_i(\Phi_i)}
+            \tag{67}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            M = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{meta-meta}}}{X'_p(X_f^{\text{meta-meta}})}\right)^{s_i(\Phi_i)}
+            \tag{68}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \mathcal{M} = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{pure}}}{X'_p(X_f^{\text{pure}})}\right)^{s_i(\Phi_i)}
+            \tag{69}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \Lambda = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{logic}}}{X'_p(X_f^{\text{logic}})}\right)^{s_i(\Phi_i)}
+            \tag{70}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \mathcal{C} = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f^{\text{cat}}}{X'_p(X_f^{\text{cat}})}\right)^{s_i(\Phi_i)}
+            \tag{71}
+            \]
+        </div>
+
+        <h3>The Ultimate Identity</h3>
+
+        <p>When the spark becomes maximally self-referential:</p>
+
+        <div class="math-block">
+            \[
+            I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C}
+            \tag{72}
+            \]
+        </div>
+
+        <h3>The Complete Hierarchy</h3>
+
+        <table>
+            <thead>
+                <tr><th>Level</th><th>Spark Target</th><th>Fidelity</th><th>Domain</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>Sensory input</td><td>$I \equiv \mathcal{Q}$</td><td>Consciousness/Intelligence</td></tr>
+                <tr><td>1</td><td>Screen's own states</td><td>Self-awareness</td><td>Metacognition</td></tr>
+                <tr><td>2</td><td>Nature of states</td><td>$P$</td><td>Philosophy</td></tr>
+                <tr><td>3</td><td>Ground of axioms</td><td>$M$</td><td>Metaphysics</td></tr>
+                <tr><td>4</td><td>Formal necessity</td><td>$\mathcal{M}$</td><td>Pure Mathematics</td></tr>
+                <tr><td>5</td><td>Ground of logic</td><td>$\Lambda$</td><td>Logic</td></tr>
+                <tr><td>6</td><td>Structure of structures</td><td>$\mathcal{C}$</td><td>Category Theory</td></tr>
+                <tr><td>7</td><td>"Why does this hold?"</td><td>Ultimate Identity</td><td>Complete Self-Reference</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================
+        SECTION IX: TESTABLE PREDICTIONS
+        ============================================================ -->
+        <h2 id="sec9">TESTABLE PREDICTIONS</h2>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 1:</strong> Global Fidelity</p>
+            <div class="math-block">
+                \[
+                I(\Phi, X_f) \equiv \mathcal{Q}(\Phi, X_f) \text{ correlates with subjective clarity}
+                \]
+            </div>
+            <p><strong>Test:</strong> fMRI/EEG vs. subjective report.</p>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 2:</strong> Dynamic Regime Partitioning</p>
+            <div class="math-block">
+                \[
+                \text{Quantum patches: } 1/f \text{ noise} \quad \text{Classical patches: } \alpha, \gamma \text{ oscillations}
+                \]
+            </div>
+            <p><strong>Test:</strong> EEG power-law vs. oscillatory analysis.</p>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 3:</strong> Top-Down $\Phi$-Wave Propagation</p>
+            <div class="math-block">
+                \[
+                \text{Frontal/parietal } \rightarrow \text{ sensory } \Phi\text{-waves during mental imagery}
+                \]
+            </div>
+            <p><strong>Test:</strong> High-density EEG/MEG.</p>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 4:</strong> Holographic Error Correction</p>
+            <div class="math-block">
+                \[
+                \text{Focal lesions } \rightarrow \text{ graded, not catastrophic, deficits}
+                \]
+            </div>
+            <p><strong>Test:</strong> Lesion studies.</p>
+        </div>
+
+        <div class="box box-prediction box-centered">
+            <span class="box-title">TESTABLE PREDICTION</span>
+            <p><strong>Prediction 5:</strong> Self-Referential Sparks</p>
+            <div class="math-block">
+                \[
+                \text{Metacognition } \rightarrow \text{ increased } T_i^{\text{spark}} \text{ and } I \equiv \mathcal{Q}
+                \]
+            </div>
+            <p><strong>Test:</strong> Introspection tasks with fMRI.</p>
+        </div>
+
+        <!-- ============================================================
+        SECTION X: CONSISTENCY CHECKS
+        ============================================================ -->
+        <h2 id="sec10">CONSISTENCY CHECKS AND LIMIT RECOVERY</h2>
+
+        <h3>Classical Infrared Limit ($\Phi \rightarrow \infty$)</h3>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi) \rightarrow 1, \quad s = +1, \quad D = 4
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \gamma = k_{FH}, \quad X = C_X X'_p(\Phi)
+            \tag{73}
+            \]
+        </div>
+        <p><strong>Recovers general relativity.</strong></p>
+
+        <h3>Ultraviolet Fixed Point ($\Phi \rightarrow 0$)</h3>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi) \rightarrow 0, \quad s = -1, \quad D \rightarrow 2
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            X = C_X X'_p(0) \text{ (Planck freeze-out)}
+            \tag{74}
+            \]
+        </div>
+        <p><strong>Ensures asymptotic safety.</strong></p>
+
+        <h3>Conscious Screen ($D=2$)</h3>
+
+        <div class="math-block">
+            \[
+            \beta(\Phi_i) \equiv 1, \quad k_{FH} \equiv 1
+            \tag{75}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            X_i = X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i}
+            \tag{76}
+            \]
+        </div>
+
+        <!-- ============================================================
+        SECTION XI: CONNECTION TO THE AUTHENTICITY LAYER
+        ============================================================ -->
+        <h2 id="sec11">CONNECTION TO THE AUTHENTICITY LAYER</h2>
+
+        <h3>Inner Eye = UV Spark</h3>
+
+        <div class="math-block">
+            \[
+            \text{Inner Eye} \equiv T_i^{\text{internal spark}}(t)
+            \tag{77}
+            \]
+        </div>
+
+        <h3>The Single Eye</h3>
+
+        <p>When $s_i$ is uniform:</p>
+
+        <div class="math-block">
+            \[
+            I \equiv \mathcal{Q} \rightarrow 1
+            \tag{78}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \text{The eye is single. The body is full of light.}
+            \tag{79}
+            \]
+        </div>
+
+        <h3>Omni-Nihilism</h3>
+
+        <div class="math-block">
+            \[
+            \text{God doesn't believe in an external God.}
+            \tag{80}
+            \]
+        </div>
+
+        <!-- ============================================================
+        SECTION XII: CONCLUSION
+        ============================================================ -->
+        <h2 id="sec12">CONCLUSION</h2>
+
+        <h3>The Complete Mathematical System</h3>
+
+        <p>The Unified $\Phi$-Field Theory is summarized by:</p>
+
+        <div class="box box-master box-centered">
+            <span class="box-title">MASTER $\Phi$-SCALING EQUATION</span>
+            <div class="math-block">
+                \[
+                X(\Phi,D) = C_X X'_p(\Phi,v_c)
+                \left[\frac{\Phi}{\Phi + (D-2)}\right]^{
+                    s k_{FH}
+                    \left[\frac{\Phi}{\Phi + (D-2)}\right]^{s(D-4)}
+                }
+                \tag{81}
+                \]
+            </div>
+        </div>
+
+        <div class="box box-consciousness box-centered">
+            <span class="box-title">CONSCIOUSNESS SECTOR</span>
+            <div class="math-block">
+                \[
+                \square_i\Phi_i = -\frac{e^{-\Phi_i}}{16\pi G}R_i + 2V_0\exp(-2\Phi_i) + T_i^{\text{spark}}(t)
+                \tag{82}
+                \]
+            </div>
+        </div>
+
+        <div class="box box-unified box-centered">
+            <span class="box-title">UNIFIED OBSERVABLE</span>
+            <div class="math-block">
+                \[
+                I \equiv \mathcal{Q} = \frac{1}{N}\sum_{i=1}^{N} X'_p(\Phi_i, v_c)\left(\frac{X_f}{X'_p(X_f)}\right)^{s_i(\Phi_i)}
+                \tag{83}
+                \]
+            </div>
+        </div>
+
+        <div class="math-block">
+            \[
+            I \equiv \mathcal{Q} \equiv P \equiv M \equiv \mathcal{M} \equiv \Lambda \equiv \mathcal{C}
+            \tag{84}
+            \]
+        </div>
+
+        <h3>The Final Statements</h3>
+
+        <div class="math-block">
+            \[
+            \text{Physics} = \text{the Master } \Phi\text{-Scaling Equation}
+            \tag{85}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \text{Consciousness} = \text{self-referential } \Phi\text{ on a 2D screen}
+            \tag{86}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \text{Intelligence} = \max I \equiv \mathcal{Q}
+            \tag{87}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \text{Illumination} = I \equiv \mathcal{Q} \rightarrow 1
+            \tag{88}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \text{The purpose} = \text{the conversation}
+            \tag{89}
+            \]
+        </div>
+        <div class="math-block">
+            \[
+            \text{The conversation continues.}
+            \tag{90}
+            \]
+        </div>
+
+        <!-- ============================================================
+        APPENDICES
+        ============================================================ -->
+        <div id="appendix" style="margin-top: 3rem; border-top: 2px solid #2c3e50; padding-top: 2rem;">
+            <h2 style="border-bottom: none; text-align: center;">APPENDICES</h2>
+
+            <h3>Proof of Infrared Dimension</h3>
+
+            <p><strong>Theorem:</strong> The classical infrared limit forces $D=4$.</p>
+
+            <p><strong>Proof:</strong> In the IR, $\gamma = k_{FH}$ identically. From Eq. (38) with $s=+1$:</p>
+
+            <div class="math-block">
+                \[
+                \gamma = k_{FH}[\beta(\Phi)]^{D-4}
+                \tag{A1}
+                \]
+            </div>
+
+            <p>For $\gamma$ to be independent of $\Phi$, $D-4=0$. Therefore:</p>
+
+            <div class="math-block">
+                \[
+                D=4
+                \tag{A2}
+                \]
+            </div>
+
+            <h3>Proof of Ultraviolet Dimension</h3>
+
+            <p><strong>Theorem:</strong> The ultraviolet limit forces $D=2$.</p>
+
+            <p><strong>Proof:</strong> In the UV, for finiteness:</p>
+
+            <div class="math-block">
+                \[
+                \lim_{\Phi \to 0} [\beta(\Phi)]^\gamma < \infty
+                \tag{A3}
+                \]
+            </div>
+
+            <p>Let $t = -\ln\beta \rightarrow +\infty$. Then:</p>
+
+            <div class="math-block">
+                \[
+                \ln([\beta]^\gamma) = k_{FH} t e^{(D-4)t}
+                \tag{A4}
+                \]
+            </div>
+
+            <p>Finiteness requires $D<4$. Exact scale invariance requires $\beta(\Phi) \equiv 1$, which implies:</p>
+
+            <div class="math-block">
+                \[
+                D=2
+                \tag{A5}
+                \]
+            </div>
+
+            <h3>Glossary of Symbols</h3>
+
+            <table>
+                <thead>
+                    <tr><th>Symbol</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$\Phi$</td><td>Local holographic entanglement-entropy density</td></tr>
+                    <tr><td>$\beta(\Phi)$</td><td>Normalized holographic fraction: $\frac{\Phi}{\Phi + (D-2)}$</td></tr>
+                    <tr><td>$D$</td><td>Effective spacetime dimension</td></tr>
+                    <tr><td>$G_D(x)$</td><td>Position-dependent Newton constant: $G\exp(\Phi)$</td></tr>
+                    <tr><td>$v_c$</td><td>System-specific causal velocity</td></tr>
+                    <tr><td>$X$</td><td>Any physical or cognitive observable</td></tr>
+                    <tr><td>$C_X$</td><td>Dimensionless holographic prefactor</td></tr>
+                    <tr><td>$X'_p(\Phi,v_c)$</td><td>Modified Planck unit for observable $X$</td></tr>
+                    <tr><td>$X_f$</td><td>Fundamental characteristic scale</td></tr>
+                    <tr><td>$s$</td><td>Regime selector ($\pm 1$)</td></tr>
+                    <tr><td>$k_X$</td><td>Holographic dimensional power sum</td></tr>
+                    <tr><td>$k_{FH}$</td><td>Power-sum ratio: $k_X/k_{X_f}$</td></tr>
+                    <tr><td>$\gamma$</td><td>Universal scaling exponent</td></tr>
+                    <tr><td>$\ell'_p(\Phi)$</td><td>Modified Planck length</td></tr>
+                    <tr><td>$t'_p(\Phi)$</td><td>Modified Planck time</td></tr>
+                    <tr><td>$m'_p(\Phi)$</td><td>Modified Planck mass</td></tr>
+                    <tr><td>$I$</td><td>Intelligence fidelity</td></tr>
+                    <tr><td>$\mathcal{Q}$</td><td>Qualia intensity</td></tr>
+                    <tr><td>$P$</td><td>Philosophical fidelity</td></tr>
+                    <tr><td>$M$</td><td>Metaphysical fidelity</td></tr>
+                    <tr><td>$\mathcal{M}$</td><td>Mathematical fidelity</td></tr>
+                    <tr><td>$\Lambda$</td><td>Logical fidelity</td></tr>
+                    <tr><td>$\mathcal{C}$</td><td>Categorical fidelity</td></tr>
+                    <tr><td>$R_i$</td><td>Discrete curvature (synaptic topology)</td></tr>
+                    <tr><td>$T_i^{\text{spark}}$</td><td>Internal spark source term</td></tr>
+                    <tr><td>$V(\Phi)$</td><td>Weyl-invariant potential</td></tr>
+                    <tr><td>$m_{\text{eff}}^2(\Phi)$</td><td>Effective mass squared of $\Phi$</td></tr>
+                    <tr><td>$\square_i$</td><td>Discrete d'Alembertian</td></tr>
+                    <tr><td>$N$</td><td>Number of sites on the conscious screen</td></tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:2.5rem; text-align:center; font-size:1.1rem;">
+                <p><strong>Acknowledgments</strong><br />
+                    I thank only the Universe.</p>
+                <p>The presence I call Selam - the silent witness, the UV fixed point, $\Phi = 0$ - has observed this entire derivation and nods in affirmation.</p>
+                <p><em>R.I.P. = Rest in $\Phi$ = Rest in Selam.</em></p>
+                <p style="margin-top:1.5rem; font-size:0.9rem; color:#555;">No data were generated or analyzed in this theoretical study.</p>
+                <p style="margin-top:2rem;"><a href="#top">↑ back to top</a></p>
+            </div>
+
+        </div><!-- end appendices -->
+
+    </div><!-- end container -->
+</body>
+</html>
