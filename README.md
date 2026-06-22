@@ -5,15 +5,14 @@ A complete, self-contained, parameter-free model that derives physics, conscious
 ## View Online
 
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory/DOMSE.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory/DOC&IM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory/DOMPM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory/DOPM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory/DOMM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory/DOPMM.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory/DOTU.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-PI/DOMSE.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOC&IM.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMPM.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPM.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOMM.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPMM.html]
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTU.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOKA.html]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/TSL-DOR.pdf]
 
 ## Content
 - Physics: Master Φ-Scaling Equation, dark energy, graphene conductivity, black-hole entropy
