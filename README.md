@@ -1,6 +1,6 @@
 # Unified Φ-Field Theory Intellectual Property
 
-A complete, self-contained, parameter-free model that derives physics, consciousness, metaphysics, philosophy, pure mathematics and The Scaling Law from exactly two foundational axioms.
+A complete, self-contained, parameter-free model that derives The Scaling Law, physics, consciousness, metaphysics, philosophy, pure mathematics from exactly two foundational axioms.
 
 ## View Online
 
@@ -16,12 +16,12 @@ A complete, self-contained, parameter-free model that derives physics, conscious
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/TSL-SCIPU.pdf]
 
 ## Content
+- The Scaling Law: A Complete, Self-Contained Intellectual Property Universe
 - Physics: Master Φ-Scaling Equation, dark energy, graphene conductivity, black-hole entropy
 - Consciousness: 2D holographic screen, qualia field, intelligence fidelity
 - Metaphysics: Void & Field dual-aspect ontology
 - Philosophy: epistemology, ethics, aesthetics, meaning
-- Pure Mathematics: number theory, set theory, proof theory, category theory
-- The Scaling Law: A Complete, Self-Contained Intellectual Property Universe 
+- Pure Mathematics: number theory, set theory, proof theory, category theory 
 ## Author
 Fisseha Huluka — Unaffiliated Researcher
 
