@@ -14,7 +14,7 @@ A complete, self-contained, parameter-free model that derives The Scaling Law, p
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOPMM.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOKA.html]
 - 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/TSL-SCIPU.pdf]
-- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTEU.md] 
+- 👉 [https://fissehatamire.github.io/Unified-Phi-Field-Theory-IP/DOTEU.html] 
 
 ## Content
 - The Scaling Law: A Complete, Self-Contained Intellectual Property Universe
